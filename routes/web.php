@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('inventory', "InventoryController");
 Route::resource('events', "EventController");
+Route::get('events/{event}/detail',"ShowDetail")->name('event.details');
