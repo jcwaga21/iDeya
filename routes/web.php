@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('inventory', "InventoryController");
 Route::resource('events', "EventController");
 Route::get('events/{event}/detail',"ShowDetail")->name('event.details');
+
+Route::view('/co-working', "co-working")->name('co-working');
+Route::view('/guest',"guest")->name('guest');
