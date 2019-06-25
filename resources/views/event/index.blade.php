@@ -11,7 +11,7 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    <table class="table table-responsive">
+                    <table class="table table.responsive">
                         <thead>
                         <tr>
                             <th>Event Title</th>
@@ -32,9 +32,8 @@
                                     <td> {{$event->type}} </td>
                                     <td> {{$event->date}} </td>
                                     <td> {{$event->actual_no}} / {{$event->expected_no}} </td>
-
                                     <td> {{$event->guestspeaker}} </td>
-                                    <td> {{$event->budget}} </td>
+                                    <td> {{$event->eventbudget}} </td>
                                     <td> {{$event->status}} </td>
                                     <td> {{$event->reg_fee}} </td>
                                     <td> {{$event->no_days}} </td>
