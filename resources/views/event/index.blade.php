@@ -11,8 +11,8 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    <table class="table table.responsive">
-                        <thead>
+                    <table class="table table table-bordered .table-responsive">
+                        <thead class="thead-dark">
                         <tr>
                             <th>Event Title</th>
                             <th>Event Type</th>

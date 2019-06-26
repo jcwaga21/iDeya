@@ -18,8 +18,8 @@
 					<header>Number of Days: {{$event->no_days}}</header>
 					<header>Guest Speaker: {{$event->guestspeaker}}</header>
 					<header>Number of Participants</header>
-					<table class="table table.responsive">
-						<thead>
+					<table class="table table-bordered .table-responsive">
+						<thead  class="thead-dark">
 							<tr>
 								<th>First Name</th>
 								<th>Last Name</th>
@@ -38,9 +38,9 @@
                             @endforeach 
                         </tbody>
 					</table>
-					<header>Budget Breakdowm</header>
-					<table class="table table.responsive">
-						<thead>
+					<header>Budget Breakdown: {{$budgets->sum('total_amount')}}</header>
+					<table class="table table-bordered .table-responsive">
+						<thead  class="thead-dark">
 							<tr>
 								<th>Item</th>
 								<th>Pieces</th>
@@ -49,12 +49,12 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($participants as $participant)
+							@foreach($budgets as $budget)
 							<tr>
 								<td> {{$budget->item}} </td>
 								<td> {{$budget->no_of_items}} </td>
                                 <td> {{$budget->amount}} </td>
-                                <td> {{$budget->total_amount}} </td>
+                                <td> {{$budget->no_of_items*$budget->amount}} </td>
                             </tr>
                             @endforeach 
                         </tbody>						
