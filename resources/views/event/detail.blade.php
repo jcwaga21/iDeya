@@ -11,14 +11,20 @@
 			<div class="card">
 				<div class="card-header">{{$event->title}}</div>	
 				<div class="card-body">
-					<header>Type: {{$event->type}}</header>
-					<header>Date: {{$event->date}}</header>
-					<header>Status: {{$event->status}}</header>
-					<header>Registration Fee: {{$event->reg_fee}}</header>
-					<header>Number of Days: {{$event->no_days}}</header>
-					<header>Guest Speaker: {{$event->guestspeaker}}</header>
+					<table class="table .table-responsive">
+						<tbody>
+							<tr>
+								<td>Registration Fee: {{$event->reg_fee}}</td>
+								<td>Number of Days: {{$event->no_of_days}}</td>
+								<td>Guest Speaker: {{$event->guestspeaker}}</td>
+								<td>Type: {{$event->eventType->name}}</td>
+								<td>Date: {{$event->date}}</td>
+								<td>Status: {{$event->status}}</td>
+							</tr>
+						</tbody>
+					</table>
 					<header>Number of Participants</header>
-					<table class="table table-bordered .table-responsive">
+					<table class="table table-bordered table-striped .table-responsive">
 						<thead  class="thead-dark">
 							<tr>
 								<th>First Name</th>
@@ -39,7 +45,7 @@
                         </tbody>
 					</table>
 					<header>Budget Breakdown: {{$budgets->sum('total_amount')}}</header>
-					<table class="table table-bordered .table-responsive">
+					<table class="table table-bordered table-striped .table-responsive">
 						<thead  class="thead-dark">
 							<tr>
 								<th>Item</th>
@@ -54,7 +60,7 @@
 								<td> {{$budget->item}} </td>
 								<td> {{$budget->no_of_items}} </td>
                                 <td> {{$budget->amount}} </td>
-                                <td> {{$budget->no_of_items*$budget->amount}} </td>
+                                <td> {{$budget->total_amount}} </td>
                             </tr>
                             @endforeach 
                         </tbody>						
