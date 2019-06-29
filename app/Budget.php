@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Budget extends Model
 {
     protected $guarded = [];
+
+    //predefining the attribute, automatic na niya i-compute
+    public function getTotalAmountAttribute()
+    {
+    	return $this->no_of_items * $this->amount;
+    }
 }

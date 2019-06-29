@@ -16,15 +16,15 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->enum('type',['FireSide', 'iDeyaBrew', 'Hackathon', 'StartupWeekend', 'iDeyaHack', '20/20 Tech Community']);
             $table->date('date');
+            $table->integer('type_id');
             $table->integer('expected_no');
             $table->integer('actual_no');
             $table->string('guestspeaker')->nullable();
             $table->float('eventbudget');
             $table->enum('status',['upcoming','ongoing','done','cancelled','pending'])->default('pending');
             $table->float('reg_fee');
-            $table->integer('no_days');
+            $table->integer('no_of_days');
             $table->timestamps();
         });
     }

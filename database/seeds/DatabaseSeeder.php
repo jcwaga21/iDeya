@@ -17,8 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Event::class,10)->create();
+        $this->call(EventTypeSeeder::class);
         
+        factory(Event::class,10)->create();
+
         factory(Participant::class,10)->create();
         for ($i=0; $i < Event::count(); $i++) {
          factory(EventParticipant::class)->create(['participant_id'=> random_int(1, Participant::count()), 'event_id'=> random_int(1, Event::count())]);
