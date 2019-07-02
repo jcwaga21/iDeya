@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::resource('inventory', "InventoryController");
 Route::resource('events', "EventController");
 Route::get('events/{event}/detail',"ShowDetail")->name('event.details');
+Route::get('events/create')->name('event.create');
 
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');
