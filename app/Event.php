@@ -18,11 +18,6 @@ class Event extends Model
     	return $this->hasMany(EventParticipant::class, 'event_id');
     }
 
-    public function eventBudget()
-    {
-    	return $this->belongsTo(EventBudget::class, 'event_id');
-    }
-
     public function eventType()
     {
     	return $this->belongsTo(EventType::class, 'type_id');
