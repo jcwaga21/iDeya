@@ -8,11 +8,9 @@
         </div>
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Event Listings</div>
-                    <div class="col-md-5">
-                        <br>
-                        <a class="btn btn-primary btn-block" href="" role="button">Create Event</a>
-                    </div>
+                <div class="card-header">Event Listings
+                    <a class="btn btn-primary pull-right float-right" href="{{route('events.create')}}" role="button">Create Event</a>
+                </div>
                 <div class="card-body">
                     <table class="table table table-bordered table-striped .table-responsive">
                         <thead class="thead-dark">

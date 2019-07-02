@@ -15,9 +15,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('events/create', function(){
-	return view('event.create');
-});
 
 Route::resource('inventory', "InventoryController");
 Route::resource('events', "EventController");
