@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Event;
 use App\Budget;
 use Illuminate\Database\Eloquent\Model;
 

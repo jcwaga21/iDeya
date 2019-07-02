@@ -14,11 +14,11 @@
 					<table class="table .table-responsive">
 						<tbody>
 							<tr>
+								<td>Type: {{$event->eventType->name}}</td>
+								<td>Date: {{$event->date}}</td>
 								<td>Registration Fee: {{$event->reg_fee}}</td>
 								<td>Number of Days: {{$event->no_of_days}}</td>
 								<td>Guest Speaker: {{$event->guestspeaker}}</td>
-								<td>Type: {{$event->eventType->name}}</td>
-								<td>Date: {{$event->date}}</td>
 								<td>Status: {{$event->status}}</td>
 							</tr>
 						</tbody>
