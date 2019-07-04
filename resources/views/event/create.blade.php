@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="type">Event Type: </label>
-                    <select class="form-control">
+                    <select name="type_id" class="form-control">
                         @foreach($eventTypes as $type)
                         <option value="{{$type->id}}">
                             {{$type->name}}
@@ -29,20 +29,20 @@
                     <input name="date" class="form-control" id="date" type="text" placeholder="Year-Month-Day">
                 </div>
                 <div class="form-group">
-                    <label for="budget">Event Budget:</label>
-                    <input name="budget" class="form-control" id="budget" type="text" placeholder="1000">
+                    <label for="eventbudget">Event Budget:</label>
+                    <input name="eventbudget" class="form-control" id="eventbudget" type="text" placeholder="1000">
                 </div>
                 <div class="form-group">
-                    <label for="expected">Expected Number of Participants:</label>
-                    <input name="expected" class="form-control" id="expected" type="text" placeholder="25">
+                    <label for="expected_no">Expected Number of Participants:</label>
+                    <input name="expected_no" class="form-control" id="expected_no" type="text" placeholder="25">
                 </div>
                 <div class="form-group">
-                    <label for="registration">Registration Fee:</label>
-                    <input name="registration" class="form-control" id="registration" type="text" placeholder="100">
+                    <label for="reg_fee">Registration Fee:</label>
+                    <input name="reg_fee" class="form-control" id="reg_fee" type="text" placeholder="100">
                 </div>
                 <div class="form-group">
-                    <label for="days">Number of Days</label>
-                    <select class="form-control">
+                    <label for="#no_of_days">Number of Days</label>
+                    <select name="no_of_days" id="no_of_days" class="form-control">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -55,11 +55,11 @@
                         <option value="10">10</option></select>
                 </div>
                 <div class="form-group">
-                    <label for="speaker">Guest Speaker:</label>
-                    <input name="speaker" class="form-control" id="speaker" type="text" placeholder="Doctor Steven Strange">
+                    <label for="guestspeaker">Guest Speaker:</label>
+                    <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="Doctor Steven Strange">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Add Event</button>
+                    <button id="add_event" type="submit" class="btn btn-primary">Add Event</button>
                 </div>
             </form>
             </div>
