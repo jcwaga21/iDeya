@@ -28,7 +28,7 @@ class CreateEventTest extends DuskTestCase
                     
                     ->type('title', 'Hackathon')
                     ->select('type_id', '1')
-                    ->type('date', '2019-01-08')
+                    ->type('date', '31/12/19')
                     ->type('expected_no', '20')
                     ->type('guestspeaker', 'Doctor Strange')
                     ->type('eventbudget', '2000')

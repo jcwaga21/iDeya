@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\EventType;
+use App\Http\Requests\Events\CreateEventRequest;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -37,7 +38,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateEventRequest $request)
     {
         $data = $request->except('_token');
 

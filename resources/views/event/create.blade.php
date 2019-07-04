@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="date">Event Date:</label>
-                    <input name="date" class="form-control" id="date" type="text" placeholder="Year-Month-Day">
+                    <input name="date" class="form-control" id="date" type="date" placeholder="Day/Month/Year">
                 </div>
                 <div class="form-group">
                     <label for="eventbudget">Event Budget:</label>
