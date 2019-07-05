@@ -19,6 +19,7 @@ class CreateParticipantsTable extends Migration
             $table->string('last_name');
             $table->string('school');
             $table->string('contact');
+            $table->boolean('is_firsttime')->default(false)->nullable();
             $table->timestamps();
         });
     }

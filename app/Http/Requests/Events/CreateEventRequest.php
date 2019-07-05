@@ -26,6 +26,7 @@ class CreateEventRequest extends FormRequest
         return [
             'title'=> 'required|string',
             'type_id'=>'required|integer',
+            'date' => 'require|date'
             'eventbudget' => 'required|integer',
         ];
     }
