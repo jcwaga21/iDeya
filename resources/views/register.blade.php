@@ -26,12 +26,12 @@
                     <label for="contact">Contact:</label>
                     <input name="contact" class="form-control" id="contact" type="text" placeholder="09XXXXXXXXX">
                 </div>
-                <div class="form-group">
-                    <label for="is_firsttime">This is my first time</label>
-                    <input name="is_firsttime" class="form-control" id="is_firsttime" type="checkbox">
+                <div class="form-check form-check-inline">
+                    <label for="is_firsttime"><p class="font-weight-bold">This is my first time</p></label>
+                    <input name="is_firsttime" class="form-check" id="is_firsttime" type="checkbox">
                 </div>
                 <div class="form-group">
-                    <button id="register" type="submit" class="btn btn-primary">Register</button>
+                    <button id="add_participant" type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
             </div>
