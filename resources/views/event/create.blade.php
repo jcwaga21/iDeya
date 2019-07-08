@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col-md-2">
             side bar here
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
             <form method="POST" action="{{route('events.store')}}">
                 @csrf
                 <img src="{{ asset('images/cesar.jpg')}}">

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Participant extends Model
+class GuestAttendance extends Model
 {
-     protected $guarded = [];
+    protected $guarded = [];
 }

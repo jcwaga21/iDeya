@@ -3,26 +3,40 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4">
-            side bar here
+        <div class="col-md-2">
+            Side Bar
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    <table>
+                    <table class="table table.responsive">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th>Event Title</th>
+                            <th>Event Type</th>
+                            <th>Date</th>
+                            <th>Number of Participants</th>
+                            <th>Guest Speaker</th>
+                            <th>Event Budget</th>
+                            <th>Status</th>
+                            <th>Registration Fee</th>
+                            <th>Number of Days</th>
                         </tr>
                         </thead>
                         <tbody>
                             @foreach($events as $event)
                                 <tr>
-                                    <td>{{$event->name}}</td>
-                                    <td>{{$event->description}}</td>
+                                    <td> <a href="{{route('event.details', compact('event'))}}">{{$event->title}}</a> </td>
+                                    <td> {{$event->type}} </td>
+                                    <td> {{$event->date}} </td>
+                                    <td> {{$event->actual_no}} / {{$event->expected_no}} </td>
+                                    <td> {{$event->guestspeaker}} </td>
+                                    <td> {{$event->eventbudget}} </td>
+                                    <td> {{$event->status}} </td>
+                                    <td> {{$event->reg_fee}} </td>
+                                    <td> {{$event->no_days}} </td>
                                 </tr>
                             @endforeach
                         </tbody>
