@@ -8,9 +8,12 @@
                 <img src="" class="card-img-top" alt="">
                 <div class="card-header">Featured</div>
                 <div class="card-title">iDeyaHack</div>
-                <p>With supporting text below as a natural lead-in to additional content.</p>
+                <p> {{optional($event)->title}}<br>
+                    {{optional($event)->type}}<br>
+                    {{optional($event)->date}}<br>
+                    {{optional($event)->reg_fee}}</p>
                 <div class="col">
-                    <a href="{{route('register')}}" class="btn btn-lg btn-success">Register Now</a>
+                    <a href="{{route('register', compact('event'))}}" class="btn btn-lg btn-success">Register Now</a>
                 </div>
                 <div class="card-footer text">
             		<a href="{{route('co-working')}}" class="btn btn-lg btn-primary">Co-working</a>
