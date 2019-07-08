@@ -10,8 +10,7 @@
                 <div class="card-title">iDeyaHack</div>
                 <p>With supporting text below as a natural lead-in to additional content.</p>
                 <div class="col">
-                    <a href="{{route('register')}}" class="btn btn-lg btn-success">Register Now</a>
-                    <br>    
+                    <a href="{{route('register')}}" class="btn btn-lg btn-success">Register Now</a>   
                 </div>
                 <div class="card-footer text">
             		<a href="{{route('co-working')}}" class="btn btn-lg btn-primary">Co-working</a>
