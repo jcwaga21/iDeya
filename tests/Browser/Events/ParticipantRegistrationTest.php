@@ -3,12 +3,14 @@
 namespace Tests\Browser\Events;
 
 use App\Event;
+use App\EventType;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ParticipantRegistrationTest extends DuskTestCase
 {
+    use DatabaseMigrations;
     /**
      * A Dusk test example.
      *
@@ -18,9 +20,10 @@ class ParticipantRegistrationTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
 
-            $event=factory(Event::class)->create();
+            $eventtype = factory(EventType::class)->create();
+            $event = factory(Event::class)->create();
 
-            $browser->visit(route('event.register', compact('event')))
+            $browser->visit(route('register', compact('event')))
 
                 ->type('first_name', 'Dominique')
                 ->type('last_name', 'Baes')

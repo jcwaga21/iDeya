@@ -14,8 +14,9 @@ class RegistrationPageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, Event $event)
     {
-        return view('register', compact('event_id'));
+        $data = $request->except('_token');
+        return view('register', compact('event'));
     }
 }

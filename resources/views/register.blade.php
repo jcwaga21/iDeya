@@ -8,8 +8,9 @@
         </div>
         <div class="col-md-10">
             <div class="col-md-8">
-                <form method="POST" action="{{route('events.store')}}">
+                <form method="POST" action="{{route('events.participant.add', compact('event'))}}">
                 @csrf
+                <h3>Register here:</h3>
                 <div class="form-group">
                     <label for="first_name">First Name:</label>
                     <input name="first_name" class="form-control" id="first_name" type="text" placeholder="Enter First Name">
@@ -24,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact:</label>
-                    <input name="contact" class="form-control" id="contact" type="text" placeholder="09XXXXXXXXX">
+                    <input name="contact" class="form-control" id="contact" type="text" placeholder="e.g. 09123456789">
                 </div>
                 <div class="form-check form-check-inline">
                     <label for="is_firsttime"><p class="font-weight-bold">This is my first time</p></label>

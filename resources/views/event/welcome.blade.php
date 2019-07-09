@@ -6,8 +6,8 @@
         <div class="col-md-10">
             <div class="card text-center">
                 <img src="" class="card-img-top" alt="">
-                <div class="card-header">Featured</div>
-                <div class="card-title">iDeyaHack</div>
+                <div class="card-header">Welcome</div>
+                <div class="card-title">Name of Participant</div>
                 <p>With supporting text below as a natural lead-in to additional content.</p>
                 <div class="col">
                     <a href="{{route('register')}}" class="btn btn-lg btn-success">Register Now</a>   

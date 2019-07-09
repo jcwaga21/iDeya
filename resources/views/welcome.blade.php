@@ -6,12 +6,12 @@
         <div class="col-md-10">
             <div class="card text-center">
                 <img src="" class="card-img-top" alt="">
-                <div class="card-header">Featured</div>
-                <div class="card-title">iDeyaHack</div>
-                <p> {{optional($event)->title}}<br>
+                <div class="card-header card-"><h3>Featured</h3></div>
+                <div class="card-title"><h5 class="display-4">iDeyaHack</h5></div>
+                <h> {{optional($event)->title}}<br>
                     {{optional($event)->type}}<br>
                     {{optional($event)->date}}<br>
-                    {{optional($event)->reg_fee}}</p>
+                    {{optional($event)->reg_fee}}</h>
                 <div class="col">
                     <a href="{{route('register', compact('event'))}}" class="btn btn-lg btn-success">Register Now</a>
                 </div>
