@@ -19,7 +19,7 @@ class CreateGuestAttendancesTable extends Migration
             $table->string('lastname');
             $table->string('emailaddress');
             $table->string('contactnumber');
-            $table->string('schoolorganization');
+            $table->string('schoolorganization')->nullable();
             $table->string('purpose');
             $table->timestamps();
         });

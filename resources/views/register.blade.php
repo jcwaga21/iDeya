@@ -11,7 +11,7 @@
             <div class="col-md-8">
                 <form method="POST" action="{{route('events.participant.add', compact('event'))}}">
                 @csrf
-                <h3>Register here:</h3>
+                <h3>Register here:</h3><br>
                 <div class="form-group">
                     <label for="first_name">First Name:</label>
                     <input name="first_name" class="form-control" id="first_name" type="text" placeholder="e.g. Jane">
@@ -28,9 +28,9 @@
                     <label for="contact">Contact:</label>
                     <input name="contact" class="form-control" id="contact" type="text" placeholder="e.g. 09123456789">
                 </div>
-                <div class="form-check form-check-inline">
-                    <label for="is_firsttime"><p class="font-weight-bold">This is my first time</p></label>
-                    <input name="is_firsttime" class="form-check" id="is_firsttime" type="checkbox">
+                <div class="custom-control custom-checkbox">
+                    <input name="is_firsttime" type="checkbox" class="custom-control-input" id="is_firsttime">
+                    <label class="custom-control-label" for="is_firsttime"><h5><strong>This is my first time</strong></h5></label>
                 </div>
                 <div class="form-group">
                     <button id="add_participant" type="submit" class="btn btn-primary">Register</button>

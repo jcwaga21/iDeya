@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-  <h1 class="">Co-Working Log-In</h1><br>
+  <h1 class="">Co-Working Registration</h1><br>
   <form method="post" action="{{route('co-working.attendance')}}">
     @csrf
     <div class="form-row">

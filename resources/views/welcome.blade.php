@@ -17,10 +17,11 @@
                     <h3>Featured</h3>
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-title"><h5 class="display-4">iDeyaHack</h5></div>
-                    <h>{{optional($event)->title}}<br>
+                    <h5>{{optional($event)->title}}<br>
                     {{optional($event)->type}}<br>
                     {{optional($event)->date}}<br>
-                    {{optional($event)->reg_fee}}</h>
+                    {{optional($event)->reg_fee}}</h5>
+                    <h5>Interested?</h5>
                     <a href="{{route('register', compact('event'))}}" class="btn btn-lg btn-success">Register Now</a>
                 </div>
                 <div class="card-footer card-group">
@@ -28,6 +29,7 @@
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Upcoming Event 1</h5>
+                            <h><strong>Day-Month-Year</strong></h><br>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text"><small class="text-muted"><a href="#">See Details</a></small></p>
                         </div>
@@ -36,6 +38,7 @@
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Upcoming Event 2</h5>
+                            <h><strong>Day-Month-Year</strong></h><br>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                             <p class="card-text"><small class="text-muted"><a href="#">See Details</a></small></p>
                         </div>
@@ -44,7 +47,7 @@
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Upcoming Event 3</h5>
-                            <h>08-01-20</h><br>
+                            <h><strong>Day-Month-Year</strong></h><br>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                             <p class="card-text"><small class="text-muted"><a href="#">See Details</a></small></p>
                         </div>

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-  <h1 class="">Guest Log-In</h1><br>
+  <h1 class="">Guest Registration</h1><br>
   <form method="post" action="{{route('guest.attendance')}}">
     @csrf
     <div class="form-row">
@@ -25,12 +25,12 @@
       <input name="contactnumber" type="text" class="form-control" id="contactnumber" placeholder="e.g. 0912356789">
     </div>
     <div class="form-group">
-      <label for="purpose">Purpose</label>
-      <input name="purpose" type="text" class="form-control" id="purpose" placeholder="e.g. Consultation">
-    </div>
-    <div class="form-group">
       <label for="#schoolorganization">School/Organization</label>
       <input name="schoolorganization" type="text" class="form-control" id="schoolorganization" placeholder="e.g. MSU-IIT">
+    </div>
+    <div class="form-group">
+      <label for="purpose">Purpose</label>
+      <input name="purpose" type="text" class="form-control" id="purpose" placeholder="e.g. Consultation">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
