@@ -24,6 +24,16 @@ Route::get('events/success', function(){
 	return 'successful';
 })->name('event.success');
 
-Route::view('/register', "register")->name('register');
+Route::get('events/welcome', function(){
+	return 'successful';
+})->name('event.welcome');
+
+Route::get('events/{event}/register', "Event\RegistrationPageController")->name('register');
+Route::post('events/{event}/participant',"Event\AddParticipantController")->name('events.participant.add');
+
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');
+Route::post('/co-working',"CoWorking\Attendance")->name('co-working.attendance');
+Route::get('/co-working/welcome/{user}',"CoWorking\Welcome")->name('co-working.welcome');
+Route::post('/guest',"Guest\Attendance")->name('guest.attendance');
+Route::get('/guest/welcome/{user}',"Guest\Welcome")->name('guest.welcome');

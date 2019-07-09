@@ -10,9 +10,10 @@
             <div class="col-md-8">
                 <form method="POST" action="{{route('events.store')}}">
                 @csrf
+                <h3>Create a new Event:</h3>
                 <div class="form-group">
                     <label for="title">Event Title:</label>
-                    <input name="title" class="form-control" id="title" type="text" placeholder="HealthHack">
+                    <input name="title" class="form-control" id="title" type="text" placeholder="e.g. HealthHack">
                 </div>
                 <div class="form-group">
                     <label for="type">Event Type: </label>
@@ -26,19 +27,19 @@
                 </div>
                 <div class="form-group">
                     <label for="date">Event Date:</label>
-                    <input name="date" class="form-control" id="date" type="date" placeholder="Day/Month/Year">
+                    <input name="date" class="form-control" id="date" type="date">
                 </div>
                 <div class="form-group">
                     <label for="eventbudget">Event Budget:</label>
-                    <input name="eventbudget" class="form-control" id="eventbudget" type="text" placeholder="1000">
+                    <input name="eventbudget" class="form-control" id="eventbudget" type="text" placeholder="e.g. 1000">
                 </div>
                 <div class="form-group">
                     <label for="expected_no">Expected Number of Participants:</label>
-                    <input name="expected_no" class="form-control" id="expected_no" type="text" placeholder="25">
+                    <input name="expected_no" class="form-control" id="expected_no" type="text" placeholder="e.g. 25">
                 </div>
                 <div class="form-group">
                     <label for="reg_fee">Registration Fee:</label>
-                    <input name="reg_fee" class="form-control" id="reg_fee" type="text" placeholder="100">
+                    <input name="reg_fee" class="form-control" id="reg_fee" type="text" placeholder="e.g. 100">
                 </div>
                 <div class="form-group">
                     <label for="#no_of_days">Number of Days</label>
@@ -56,7 +57,7 @@
                 </div>
                 <div class="form-group">
                     <label for="guestspeaker">Guest Speaker:</label>
-                    <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="Doctor Steven Strange">
+                    <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="e.g. Doctor Steven Strange">
                 </div>
                 <div class="form-group">
                     <button id="add_event" type="submit" class="btn btn-primary">Add Event</button>

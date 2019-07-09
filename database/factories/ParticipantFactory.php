@@ -8,6 +8,6 @@ $factory->define(App\Participant::class, function (Faker $faker) {
         'last_name' => $faker->lastName,
         'school' => $faker->company,
         'contact' =>$faker->phoneNumber,
-        'participant_status' => 'yes',
+        'is_firsttime' => true,
     ];
 });
