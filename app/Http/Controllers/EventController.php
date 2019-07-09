@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\EventType;
+use App\Http\Requests\Events\CreateEventRequest;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -15,6 +17,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
+        
         return view('event.index', compact('events'));
     }
 
@@ -25,7 +28,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('event.create');
+        $eventTypes = EventType::all();
+        return view('event.create', compact('eventTypes'));
     }
 
     /**
@@ -34,9 +38,9 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateEventRequest $request)
     {
-        $data = $request->only('name', 'description');
+        $data = $request->except('_token');
 
         Event::create($data);
 

@@ -18,7 +18,6 @@ class CreateBudgetsTable extends Migration
             $table->string('item');
             $table->integer('no_of_items');
             $table->float('amount');
-            $table->float('total_amount');
             $table->timestamps();
         });
     }
