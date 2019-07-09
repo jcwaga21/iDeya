@@ -1,21 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card text-center">
                 <img src="" class="card-img-top" alt="">
-                <div class="card-header">Welcome</div>
-                <div class="card-title">Name of Participant</div>
+                <div class="card-header">Welcome {{$user->firstname}}!</div>
                 <p>With supporting text below as a natural lead-in to additional content.</p>
-                <div class="col">
-                    <a href="{{route('register')}}" class="btn btn-lg btn-success">Register Now</a>   
-                </div>
-                <div class="card-footer text">
-            		<a href="{{route('co-working')}}" class="btn btn-lg btn-primary">Co-working</a>
-            		<a href="{{route('guest')}}" class=" btn btn-lg btn-primary">Guest</a>
-            	</div>
+                <a href="{{route('home')}}">Thanks! Back to home</a>
             </div>
         </div>
     </div>
