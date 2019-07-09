@@ -9,7 +9,7 @@
 		</div>
 		<div class="col-md-10">
 			<div class="card">
-				<div class="card-header">{{$event->title}}</div>	
+				<div class="card-header"><h4>{{$event->title}}</h4></div>	
 				<div class="card-body">
 					<table class="table .table-responsive">
 						<tbody>

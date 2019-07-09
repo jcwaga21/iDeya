@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    co-working
+    <h1 class="">Co-Working Log-In</h1>
     
    <form method="post" action="{{route('co-working.attendance')}}">
    	 @csrf

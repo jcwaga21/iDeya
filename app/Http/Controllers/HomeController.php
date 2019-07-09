@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$event = Event::where(['status'=>"approved"])->latest()->first();
+    	$event = Event::where(['status'=>"on-going"])->latest()->first();
 
     	
         return view('welcome',compact("event"));

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    guest
+    <h1 class="">Guest Log-In</h1>
 
  <form method="post" action="{{route('guest.attendance')}}">
    	 @csrf

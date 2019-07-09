@@ -8,8 +8,8 @@
         </div>
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Event Listings
-                    <a class="btn btn-primary pull-right float-right" href="{{route('events.create')}}" role="button">Create Event</a>
+                <div class="card-header"><h3>Event Listings</h3>
+                    <a class="btn btn-primary float-right" href="{{route('events.create')}}" role="button">Create Event</a>
                 </div>
                 <div class="card-body">
                     <table class="table table table-bordered table-striped .table-responsive">

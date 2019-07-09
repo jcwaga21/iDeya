@@ -4,7 +4,7 @@ namespace App\Http\Requests\Events;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateEventRequest extends FormRequest
+class ParticipantRegistrationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,11 @@ class CreateEventRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> 'required|string',
-            'type_id'=>'required|integer',
-            'date' => 'required|date',
-            'eventbudget' => 'required|integer',
+            'first_name'=> 'required|string',
+            'last_name'=>'required|string',
+            'school' => 'required|string',
+            'contact' => 'required|string',
+            'is_firsttime' => 'boolean',
         ];
     }
 }

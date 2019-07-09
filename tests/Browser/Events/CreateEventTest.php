@@ -2,6 +2,7 @@
 
 namespace Tests\Browser\Events;
 
+use Carbon\Carbon;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use App\EventType;
@@ -22,13 +23,13 @@ class CreateEventTest extends DuskTestCase
         //required
         $this->browse(function (Browser $browser) {
             
-            factory(EventType::class)->create(['name'=> 'doms']);
+            factory(EventType::class)->create(['name'=> 'domskie']);
 
             $browser->visit(route('events.create'))
                     
                     ->type('title', 'Hackathon')
                     ->select('type_id', '1')
-                    ->type('date', '31/12/19')
+                    ->type('date', Carbon::now()->toString())
                     ->type('expected_no', '20')
                     ->type('guestspeaker', 'Doctor Strange')
                     ->type('eventbudget', '2000')
@@ -37,7 +38,7 @@ class CreateEventTest extends DuskTestCase
                     ->click('#add_event')
 
                     ->assertUrlIs(route('events.index'))
-                    ->assertSee('doms');
+                    ->assertSee('domskie');
         });
     }
 }
