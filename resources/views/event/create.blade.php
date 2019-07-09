@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-2">
@@ -10,7 +11,7 @@
             <div class="col-md-8">
                 <form method="POST" action="{{route('events.store')}}">
                 @csrf
-                <h3>Create a new Event:</h3>
+                <h3>Create a new Event:</h3><br>
                 <div class="form-group">
                     <label for="title">Event Title:</label>
                     <input name="title" class="form-control" id="title" type="text" placeholder="e.g. HealthHack">
