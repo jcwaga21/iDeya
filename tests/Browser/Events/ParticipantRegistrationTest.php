@@ -27,6 +27,7 @@ class ParticipantRegistrationTest extends DuskTestCase
 
                 ->type('first_name', 'Dominique')
                 ->type('last_name', 'Baes')
+                ->type('email', 'dominique@gmail.com')
                 ->type('school', 'MSU-IIT')
                 ->type('contact', '09755007874')
                 ->check('is_firsttime')
