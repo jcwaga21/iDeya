@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Event;
 
+use App\EventParticipant;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
