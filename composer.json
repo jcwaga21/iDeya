@@ -4,8 +4,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.1",
+        "barryvdh/laravel-cors": "^0.11.3",
         "fideloper/proxy": "^4.1.0",
-        "laravel/framework": "^v5.8.28"
+        "jeroennoten/laravel-adminlte": "^v1.25.1",
+        "laravel/framework": "^v5.8.28",
+        "nwidart/laravel-modules": "^5.0.1",
+        "roave/security-advisories": "dev-master",
+        "yajra/laravel-datatables-oracle": "^v9.4.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.2.2",
@@ -33,7 +38,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Modules\\": "modules/"
         },
         "classmap": [
             "database/seeds",
