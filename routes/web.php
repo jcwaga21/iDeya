@@ -39,4 +39,4 @@ Route::post('/co-working',"CoWorking\Attendance")->name('co-working.attendance')
 Route::get('/co-working/welcome/{user}',"CoWorking\Welcome")->name('co-working.welcome');
 
 Route::post('/guest',"Guest\Attendance")->name('guest.attendance');
-Route::get('/guest/welcome/{user}',"Guest\Welcome")->name('guest.welcome');
+Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
