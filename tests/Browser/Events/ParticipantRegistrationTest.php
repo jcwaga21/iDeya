@@ -15,13 +15,14 @@ class ParticipantRegistrationTest extends DuskTestCase
      * A Dusk test example.
      *
      * @return void
+     * @group eventParticipant
      */
     public function testSuccessfulRegistration()
     {
         $this->browse(function (Browser $browser) {
 
             $eventtype = factory(EventType::class)->create();
-            $event = factory(Event::class)->create();
+            $event = factory(Event::class)->create(['type_id'=>$eventtype->id]);
 
             $browser->visit(route('register', compact('event')))
 
@@ -33,8 +34,7 @@ class ParticipantRegistrationTest extends DuskTestCase
                 ->check('is_firsttime')
                 ->click('#add_participant')
 
-                ->assertUrlIs(route('event.welcome'))
-                ->assertSee('Dominique');
+                ->assertSee('Welcome, Dominique');
         });
     }
 }
