@@ -26,6 +26,7 @@ class ParticipantRegistrationRequest extends FormRequest
         return [
             'first_name'=> 'required|string',
             'last_name'=>'required|string',
+            'email' => 'required|string',
             'school' => 'required|string',
             'contact' => 'required|string',
             'is_firsttime' => 'boolean',

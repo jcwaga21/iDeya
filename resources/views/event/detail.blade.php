@@ -29,6 +29,7 @@
 							<tr>
 								<th>First Name</th>
 								<th>Last Name</th>
+								<th>Email</th>
 								<th>School/Organization</th>
 								<th>Contact</th>
 							</tr>
@@ -38,6 +39,7 @@
 							<tr>
 								<td> {{$participant->first_name}} </td>
 								<td> {{$participant->last_name}} </td>
+								<td> {{$participant->email}} </td>
                                 <td> {{$participant->school}} </td>
                                 <td> {{$participant->contact}} </td>
                             </tr>
