@@ -5,6 +5,15 @@
 <div class="container">
   <h1 class="">Guest Registration</h1><br>
   <form method="post" action="{{route('guest.attendance')}}">
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
     @csrf
     <div class="form-row">
       <div class="form-group col-md-6">
