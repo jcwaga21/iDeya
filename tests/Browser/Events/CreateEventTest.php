@@ -15,7 +15,7 @@ class CreateEventTest extends DuskTestCase
     /**
      * A Dusk test example.
      *
-     * 
+     * @test
      */
     public function testSuccessfulCreatedEvent()
     {
@@ -23,7 +23,7 @@ class CreateEventTest extends DuskTestCase
         //required
         $this->browse(function (Browser $browser) {
             
-            factory(EventType::class)->create(['name'=> 'Dominique']);
+            factory(EventType::class)->create(['name'=> 'domskie']);
 
             $browser->visit(route('events.create'))
                     
@@ -38,7 +38,7 @@ class CreateEventTest extends DuskTestCase
                     ->click('#add_event')
 
                     ->assertUrlIs(route('events.index'))
-                    ->assertSee('Dominique');
+                    ->assertSee('domskie');
         });
     }
 }
