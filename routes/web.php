@@ -31,6 +31,7 @@ Route::get('events/welcome', function(){
 Route::get('events/{event}/register', "Event\RegistrationPageController")->name('register');
 Route::post('events/{event}/participant',"Event\AddParticipantController")
 	->name('events.participant.add');
+Route::get('events/{participant}/welcome', "Event\WelcomeController")->name('event.welcome');
 
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');

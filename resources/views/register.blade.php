@@ -10,6 +10,15 @@
         <div class="col-md-10">
             <div class="col-md-8">
                 <form method="POST" action="{{route('events.participant.add', compact('event'))}}">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                 @csrf
                 <h3>Register here:</h3><br>
                 <div class="form-group">
