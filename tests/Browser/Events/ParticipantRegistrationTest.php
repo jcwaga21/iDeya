@@ -22,7 +22,7 @@ class ParticipantRegistrationTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
 
             $eventtype = factory(EventType::class)->create();
-            $event = factory(Event::class)->create(['type_id'=>$eventtype->id]);
+            $event = factory(Event::class)->create(['type_id' => $eventtype->id]);
 
             $browser->visit(route('register', compact('event')))
 

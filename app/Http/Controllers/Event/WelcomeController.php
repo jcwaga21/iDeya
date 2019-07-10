@@ -10,6 +10,6 @@ class WelcomeController extends Controller
 {
     public function __invoke(Request $request, Participant $participant)
     {
-    	return view("event.welcome",compact("participant"));
+        return view("event.welcome", compact("participant"));
     }
 }

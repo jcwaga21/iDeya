@@ -8,8 +8,9 @@ use App\GuestAttendance;
 
 class Attendance extends Controller
 {
-	public function __invoke(GuestRegistrationRequest $request){
-    $user = GuestAttendance::create($request->except("_token"));
-    return redirect()->route("guest.welcome", compact('user'));
-	}
+    public function __invoke(GuestRegistrationRequest $request)
+    {
+        $user = GuestAttendance::create($request->except("_token"));
+        return redirect()->route("guest.welcome", compact('user'));
+    }
 }

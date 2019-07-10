@@ -10,7 +10,8 @@ class EventBudget extends Model
 {
     protected $guarded = [];
 
-    public function budget(){
-    	return $this->belongsTo(Budget::class, 'id', 'budget_id');
+    public function budget()
+    {
+        return $this->belongsTo(Budget::class, 'id', 'budget_id');
     }
 }

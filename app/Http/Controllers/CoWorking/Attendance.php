@@ -8,9 +8,9 @@ use App\CoWorkingAttendance;
 
 class Attendance extends Controller
 {
-    public function __invoke(CoWorkingRegistrationRequest $request){
-    $user = CoWorkingAttendance::create($request->except("_token"));
-    return redirect()->route("co-working.welcome", compact('user'));
-
+    public function __invoke(CoWorkingRegistrationRequest $request)
+    {
+        $user = CoWorkingAttendance::create($request->except("_token"));
+        return redirect()->route("co-working.welcome", compact('user'));
     }
 }

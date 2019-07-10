@@ -23,12 +23,12 @@ class RegistrationTest extends DuskTestCase
             $response = $browser->visit(route("home"))
                     ->click('#guest')
                     ->waitForText("Guest Registration")
-                    ->type('first_name','Jane')
-                    ->type('last_name','Doe')
-                    ->type('email','jane@gmail.com')
-                    ->type('contact_number','09162546254')
-                    ->type('schoolorganization','MSU-IIT')
-                    ->type('purpose','consultation')
+                    ->type('first_name', 'Jane')
+                    ->type('last_name', 'Doe')
+                    ->type('email', 'jane@gmail.com')
+                    ->type('contact_number', '09162546254')
+                    ->type('schoolorganization', 'MSU-IIT')
+                    ->type('purpose', 'consultation')
                     ->click('#submit');
 
             $response->assertSee('Welcome, Jane');
@@ -49,10 +49,10 @@ class RegistrationTest extends DuskTestCase
             $response = $browser->visit(route("home"))
                 ->click('#guest')
                 ->waitForText("Guest Registration")
-                ->type('email','jane@gmail.com')
-                ->type('contact_number','09162546254')
-                ->type('schoolorganization','MSU-IIT')
-                ->type('purpose','consultation')
+                ->type('email', 'jane@gmail.com')
+                ->type('contact_number', '09162546254')
+                ->type('schoolorganization', 'MSU-IIT')
+                ->type('purpose', 'consultation')
                 ->click('#submit');
 
             $response->assertSee('required');
@@ -65,11 +65,11 @@ class RegistrationTest extends DuskTestCase
             $response = $browser->visit(route("home"))
                 ->click('#guest')
                 ->waitForText("Guest Registration")
-                ->type('first_name','Jane')
-                ->type('last_name','Doe')
-                ->type('contact_number','09162546254')
-                ->type('schoolorganization','MSU-IIT')
-                ->type('purpose','consultation')
+                ->type('first_name', 'Jane')
+                ->type('last_name', 'Doe')
+                ->type('contact_number', '09162546254')
+                ->type('schoolorganization', 'MSU-IIT')
+                ->type('purpose', 'consultation')
                 ->click('#submit');
 
             $response->assertSee('required');

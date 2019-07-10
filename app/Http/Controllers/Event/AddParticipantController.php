@@ -13,10 +13,9 @@ class AddParticipantController extends Controller
     public function __invoke(AddParticipantRequest $request, Event $event)
     {
         $data = $request->except('_token');
-        $data['is_firsttime']= ($data['is_firsttime'] == "on") ? true:false;
+        $data['is_firsttime'] = ($data['is_firsttime'] == "on") ? true : false;
         $participant = Participant::create($data);
-        EventParticipant::create(['event_id'=>$event->id, 'participant_id'=>$participant->id]);
+        EventParticipant::create(['event_id' => $event->id, 'participant_id' => $participant->id]);
         return redirect()->route('event.welcome', compact('participant'));
     }
 }
-																																																																																			

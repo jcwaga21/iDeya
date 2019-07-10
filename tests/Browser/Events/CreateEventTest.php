@@ -22,11 +22,11 @@ class CreateEventTest extends DuskTestCase
 
         //required
         $this->browse(function (Browser $browser) {
-            
-            factory(EventType::class)->create(['name'=> 'domskie']);
+
+            factory(EventType::class)->create(['name' => 'domskie']);
 
             $browser->visit(route('events.create'))
-                    
+
                     ->type('title', 'Hackathon')
                     ->select('type_id', '1')
                     ->type('date', Carbon::now()->toString())
