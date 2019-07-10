@@ -1,0 +1,25 @@
+{
+    "name": "codingmatters/office",
+    "description": "",
+    "authors": [
+        {
+            "name": "Gab Amba",
+            "email": "gab.amba@codingmatters.today"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Office\\Providers\\OfficeServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Office\\": ""
+        }
+    }
+}
