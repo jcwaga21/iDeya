@@ -15,10 +15,10 @@ class CreateCoWorkingAttendancesTable extends Migration
     {
         Schema::create('co_working_attendances', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('emailaddress');
-            $table->string('contactnumber');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('contact_number');
             $table->timestamps();
         });
     }
