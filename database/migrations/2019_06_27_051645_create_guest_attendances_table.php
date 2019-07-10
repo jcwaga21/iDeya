@@ -15,12 +15,12 @@ class CreateGuestAttendancesTable extends Migration
     {
         Schema::create('guest_attendances', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('emailaddress');
-            $table->string('contactnumber');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('contact_number');
             $table->string('schoolorganization')->nullable();
-            $table->string('purpose');
+            $table->text('purpose');
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@
                     <h5>Not an event participant? Log-in here:</h5>
                     <div class="btn-group" role="group">
                         <a class="btn btn-outline-secondary" href="{{route('co-working')}}">Co-working</a>
-                        <a class=" btn btn-outline-secondary" href="{{route('guest')}}">Guest</a>
+                        <a class=" btn btn-outline-secondary" id="guest" href="{{route('guest')}}">Guest</a>
                     </div>
                 </div>
                 <div class="card-body">
