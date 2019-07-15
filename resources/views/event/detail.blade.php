@@ -66,7 +66,22 @@
                             </tr>
                             @endforeach 
                         </tbody>						
-					</table>				
+					</table>
+					<header>Items/Equiptment Needed</header>
+					<table class="table table-bordered table-striped .table-responsive">
+						<thead  class="thead-dark">
+							<tr>
+								<th>Item</th>
+								<th>Number of Items</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Item </td>
+								<td>Number of Items</td>
+							</tr> 
+                        </tbody>						
+					</table>					
 				</div>			
 			</div>
 		</div>
