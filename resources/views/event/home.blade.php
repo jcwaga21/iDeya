@@ -33,7 +33,8 @@
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h class="card-title display-4">{{$event->title}}</h><br>
-                            <h><strong>Date: {{$event->date}}</strong></h><br>
+                            <h>Type: {{$event->eventType->name}}<br>
+                            <strong>Date: {{$event->date}}</strong></h><br>
                             <p class="card-text">{{$event->description}}</p>
                             <p class="card-text"><small class="text-muted"><a href="{{route('event.seedetails', compact('event'))}}">See Details</a></small></p>
                         </div>

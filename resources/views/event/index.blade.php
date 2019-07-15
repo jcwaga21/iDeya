@@ -4,12 +4,6 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-2">
-                Side Bar<br><br>
-                Logs Management<br>
-                Event Management<br>
-                Inventory Management<br>
-        </div>
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">

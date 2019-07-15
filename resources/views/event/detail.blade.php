@@ -4,9 +4,6 @@
 
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-md-2">
-			side bar here			
-		</div>
 		<div class="col-md-10">
 			<div class="card">
 				<div class="card-header"><h4>{{$event->title}}</h4></div>	

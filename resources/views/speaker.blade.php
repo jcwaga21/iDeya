@@ -4,9 +4,6 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-2">
-            side bar here
-        </div>
         <div class="col-md-10">
             <div class="col-md-8">
                 <form method="POST" action="{{route('speaker', compact('event'))}}">
