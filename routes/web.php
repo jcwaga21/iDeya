@@ -21,6 +21,7 @@ Route::resource('inventory', "InventoryController");
 Route::get('events/{event}/register', "Event\RegistrationPageController")->name('register');
 Route::post('events/{event}/participant',"Event\AddParticipantController")
 		->name('events.participant.add');
+Route::get('events/{event}/seedetails', "Event\SeeDetails")->name('event.seedetails');
 Route::get('events/{participant}/welcome', "Event\WelcomeController")->name('event.welcome');
 
 Route::group(["prefix"=>'events'], function(){
@@ -32,7 +33,7 @@ Route::group(["prefix"=>'events'], function(){
 	
 });
 
-
+Route::get('events/create/addspeaker', "Event\AddSpeakerController")->name('speaker');
 
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');

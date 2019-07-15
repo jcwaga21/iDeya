@@ -18,6 +18,6 @@ class HomeController extends Controller
         $ongoingEvent = Event::where(['status' => "on-going"])->latest()->first();
         $upcomingEvents = Event::where(['status' => "upcoming"])->latest()->get();
 
-        return view('welcome', compact("ongoingEvent", "upcomingEvents"));
+        return view('event.home', compact("ongoingEvent", "upcomingEvents"));
     }
 }
