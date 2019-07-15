@@ -2,11 +2,16 @@
 
 use App\EventType;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+
 
 $factory->define(App\Event::class, function (Faker $faker) {
+
+    $title = $faker->word;    
+
     return [
-        //'image' =>$faker->image,
-        'title' => $faker->word,
+        'title' => $title,
+        'slug' => Str::slug($title),
         'type_id' => random_int(1, EventType::count()),
         'date' => $faker->date,
         'expected_no' => random_int(10, 50),
