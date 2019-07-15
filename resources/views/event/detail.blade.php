@@ -64,7 +64,7 @@
                             @endforeach 
                         </tbody>						
 					</table>
-					<header>Items/Equiptment Needed</header>
+					<header>Items/Equipment Needed</header>
 					<table class="table table-bordered table-striped .table-responsive">
 						<thead  class="thead-dark">
 							<tr>
