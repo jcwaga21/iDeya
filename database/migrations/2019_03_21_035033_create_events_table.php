@@ -15,6 +15,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            //$table->binary('image')->nullable();
             $table->string('title');
             $table->date('date');
             $table->integer('type_id');
@@ -25,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->enum('status',['upcoming','on-going','done','cancelled','pending','approved'])->default('pending');
             $table->float('reg_fee');
             $table->integer('no_of_days');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
