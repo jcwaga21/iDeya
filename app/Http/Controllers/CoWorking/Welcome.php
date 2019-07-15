@@ -8,10 +8,9 @@ use App\CoWorkingAttendance;
 
 class Welcome extends Controller
 {
-    public function __invoke(Request $request, CoWorkingAttendance $user){
-    
-    return view("co-working.welcome",compact("user"));
-    
-    
+    public function __invoke(Request $request, CoWorkingAttendance $user)
+    {
+
+        return view("co-working.welcome", compact("user"));
     }
 }

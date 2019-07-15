@@ -10,6 +10,6 @@ class Budget extends Model
 
     public function getTotalAmountAttribute()
     {
-    	return $this->no_of_items * $this->amount;
+        return $this->no_of_items * $this->amount;
     }
 }

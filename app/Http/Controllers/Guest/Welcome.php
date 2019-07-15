@@ -8,10 +8,8 @@ use App\GuestAttendance;
 
 class Welcome extends Controller
 {
-    public function __invoke(Request $request, GuestAttendance $user){
-    return view("guest.welcome",compact("user"));
+    public function __invoke(Request $request, GuestAttendance $user)
+    {
+        return view("guest.welcome", compact("user"));
+    }
 }
-}
-
-
-

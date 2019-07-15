@@ -7,7 +7,7 @@ use App\Event;
 
 class HomeController extends Controller
 {
-    
+
     /**
      * Show the application dashboard.
      *
@@ -15,10 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$event = Event::where(['status'=>"on-going"])->latest()->first();
+        $ongoingEvent = Event::where(['status' => "on-going"])->latest()->first();
+        $upcomingEvents = Event::where(['status' => "upcoming"])->latest()->get();
 
-    	
-        return view('welcome',compact("event"));
-
+        return view('welcome', compact("ongoingEvent", "upcomingEvents"));
     }
 }

@@ -24,8 +24,8 @@ class ParticipantRegistrationRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name'=> 'required|string',
-            'last_name'=>'required|string',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
             'email' => 'required|string',
             'school' => 'required|string',
             'contact' => 'required|string',

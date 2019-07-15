@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Event;
 
 use App\Event;
 use App\Participant;
-use App\EventParticipant;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -19,7 +18,6 @@ class ParticipantRegistrationController extends Controller
     public function __invoke(Request $request, Event $event)
     {
         $data = $request->except('_token');
-        dd($data);
         return view('register', compact('event'));
     }
 }

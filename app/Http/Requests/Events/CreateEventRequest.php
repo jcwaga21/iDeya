@@ -24,8 +24,8 @@ class CreateEventRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> 'required|string',
-            'type_id'=>'required|integer',
+            'title' => 'required|string',
+            'type_id' => 'required|integer',
             'date' => 'required|date',
             'eventbudget' => 'required|integer',
         ];

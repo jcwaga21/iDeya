@@ -12,14 +12,15 @@ use App\EventParticipant;
 
 class ShowDetail extends Controller
 {
-     public function __invoke(Event $event)
+    public function __invoke(Event $event)
     {
-    	$budgets = Budget::whereIn("id",EventBudget::where(["event_id"=>$event->id])->pluck('budget_id'))->get();
+        $budgets = Budget::whereIn("id", EventBudget::where(["event_id" => $event->id])->pluck('budget_id'))->get();
 
-    	$participants = Participant::whereIn("id",EventParticipant::where(["event_id"=>$event->id])->pluck('participant_id'))->get();
-    	
-    	//dd($budgets->toArray());
-       
-        return view('event.detail', compact('event','participants', 'budgets'));
+        $participants = Participant::whereIn(
+            "id",
+            EventParticipant::where(["event_id" => $event->id])->pluck('participant_id')
+        )->get();
+
+        return view('event.detail', compact('event', 'participants', 'budgets'));
     }
 }
