@@ -34,6 +34,7 @@
       <input name="contact_number" type="text" class="form-control" id="contact_number" placeholder="e.g. 0912356789">
     </div>
     <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" id="submit" class="btn btn-primary">Sign In</button>
   </form>
 </div>
 @endsection
