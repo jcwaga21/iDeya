@@ -10,6 +10,9 @@ $factory->define(App\Event::class, function (Faker $faker) {
     $title = $faker->word;    
 
     return [
+
+        //'image' =>$faker->image,
+
         'title' => $title,
         'slug' => Str::slug($title),
         'type_id' => random_int(1, EventType::count()),

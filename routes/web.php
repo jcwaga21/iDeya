@@ -15,7 +15,6 @@
 Auth::routes();
 
 
-
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('inventory', "InventoryController");
@@ -24,6 +23,7 @@ Route::get('events/{event}/register', "Event\RegistrationPageController")->name(
 Route::post('events/{event}/participant',"Event\AddParticipantController")
 		->name('events.participant.add');
 Route::get('events/{event}/seedetails', "Event\SeeDetails")->name('event.seedetails');
+
 Route::get('events/{participant}/welcome', "Event\WelcomeController")->name('event.welcome');
 
 Route::group(["prefix"=>'events'], function(){
@@ -46,4 +46,9 @@ Route::view('/co-working/coworking-registration-and-login-form',"co-working.cowo
 
 Route::post('/guest',"Guest\Attendance")->name('guest.attendance');
 Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
+
+
+Route::get('/inventory/create',"Inventory\CreateChairController")->name('inventory.create');
+Route::post('/inventory/view-inventory',"Inventory\AddChairController")->name('inventory.chair.add');
+Route::get('/inventory',"InventoryController@index")->name('inventory');
 
