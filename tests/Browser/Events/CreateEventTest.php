@@ -15,9 +15,8 @@ class CreateEventTest extends DuskTestCase
     use UserFactoryHelper;
 
     /**
-     * A Dusk test example.
-     *
      * @test
+     * @group event
      */
     public function testSuccessfulCreatedEvent()
     {
@@ -27,7 +26,7 @@ class CreateEventTest extends DuskTestCase
 
             factory(EventType::class)->create(['name' => 'domskie']);
 
-            $browser->loginAs($this->mockAdminUser())->visit(route('events.create'))
+            $browser->visit(route('events.create'))
 
                     ->type('title', 'Hackathon')
                     ->select('type_id', '1')

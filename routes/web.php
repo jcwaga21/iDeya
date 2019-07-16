@@ -35,8 +35,7 @@ Route::group(["prefix"=>'events'], function(){
 	
 });
 
-Route::post('events/{event}/create/addspeaker', "Event\AddSpeakerController")->name('event.speaker');
-Route::get('events/{event}/create/addspeaker', "Event\AddSpeakerController")->name('speaker');
+Route::get('events/create/addspeaker', "Event\AddSpeakerController")->name('speaker');
 
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');
@@ -51,5 +50,4 @@ Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
 
 Route::get('/inventory/create',"Inventory\CreateChairController")->name('inventory.create');
 Route::post('/inventory/view-inventory',"Inventory\AddChairController")->name('inventory.chair.add');
-Route::get('/inventory',"InventoryController@index")->name('inventory');
-
+Route::get('/inventory',"InventoryController@index")->name('inventory');	

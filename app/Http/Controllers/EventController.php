@@ -41,10 +41,16 @@ class EventController extends Controller
      */
     public function store(CreateEventRequest $request)
     {
-        $data = $request->except('_token');
+        $data = $request->except(['_token', 'guestspeaker', 'speaker_id']);
         $data['slug'] = Str::slug($data['title']);
+        $event = Event::create($data);
 
-        Event::create($data);
+        if ($request->post('speaker_id') == 0) {
+            $speaker = Speaker::firstOrCreate(['full_name' => $request->post('guestspeaker')]);
+            SpeakerEvent::create(['event_id' => $event->id, 'speaker_id' => $speaker->id]);
+        } else {
+            SpeakerEvent::create(['event_id' => $event->id, 'speaker_id' => $request->post('speaker_id')]);
+        }
 
         return redirect()->route('events.index');
     }
