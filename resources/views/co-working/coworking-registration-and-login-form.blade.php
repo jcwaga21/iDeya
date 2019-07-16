@@ -5,25 +5,23 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Login as Co-Working') }}
+                    <div class="card-header" align="Left"><h3>Login as Co-working</h3>
                         <form class="form-inline" method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('email') }}</label>
-                                <div class="col-md-6">
-                                     <input type="email" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required autofocus id="coworking-email" placeholder="Enter email" name="coworking-email">
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Username</label>
+                                    <input type="email" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required autofocus id="coworking-email" placeholder="Enter email" name="coworking-email">
                                         @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                          @endif
                                 </div>
-                            </div>
 
-                            <div class="form-group">
+                                <div class="form-group col-md-4">
                                 <label for="password" class="col-md-4 col-form-label text-md-right"> {{ __('Password') }}</label>
-                                <div class="col-md-6">
                                     <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" placeholder="Enter password" name="password" required>
                                         @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -31,21 +29,17 @@
                                         </span>
                                         @endif
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <div class="form-group row mb-0">
-                                    <div>
-                                        <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
-                                        @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                        @endif
-                                    </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
                                 </div>
-                            </div>
 
+                            </div>
                 </div>
             </div>
         </div>
