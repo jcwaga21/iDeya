@@ -6,6 +6,7 @@ use App\Event;
 use App\EventType;
 use App\Http\Requests\Events\CreateEventRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
@@ -41,6 +42,7 @@ class EventController extends Controller
     public function store(CreateEventRequest $request)
     {
         $data = $request->except('_token');
+        $data['slug'] = Str::slug($data['title']);
 
         Event::create($data);
 

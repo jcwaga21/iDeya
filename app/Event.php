@@ -13,6 +13,11 @@ class Event extends Model
 {
     protected $guarded = [];
 
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     public function eventParticipants()
     {
         return $this->hasMany(EventParticipant::class, 'event_id');

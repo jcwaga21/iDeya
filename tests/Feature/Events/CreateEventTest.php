@@ -15,7 +15,7 @@ class CreateEventTest extends TestCase
      */
     public function testSuccessfullyCreatedEvent()
     {
-        $this->markTestIncomplete();
+        //$this->markTestIncomplete();
 
         $response = $this->get('/');
 

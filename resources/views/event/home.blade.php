@@ -17,13 +17,14 @@
                     @unless(!$ongoingEvent)
                     <h3>Featured</h3>
                     <img src="..." class="card-img-top" alt="...">
-                    <div class="card-title"><h5 class="display-4">{{$ongoingEvent->type}}</h5></div>
-                    <h5>{{$ongoingEvent->title}}<br>
-                    <strong>{{$ongoingEvent->date}}</strong><br><br>
+                    <div class="card-title"><h5 class="display-4">{{$ongoingEvent->title}}</h5></div>
+                    <h5>{{$ongoingEvent->eventType->name}}<br>
+                    Date: {{$ongoingEvent->date}}<br><br>
                     {{$ongoingEvent->description}}<br><br>
-                    Registration Fee: {{$ongoingEvent->reg_fee}}</h5><br>
+                    Registration Fee: {{$ongoingEvent->reg_fee}}</h5><br><br>
                     <h5>Interested?</h5>
                     <a href="{{route('register', compact('ongoingEvent'))}}" class="btn btn-lg btn-success">Register Now</a>
+                    <p class="card-text"><small class="text-muted"><a href="{{route('event.seedetails', compact('ongoingEvent'))}}">See Details</a></small></p>
                     @endunless
                 </div>
                 <div class="card-footer card-group">
@@ -31,10 +32,11 @@
                     <div class="card">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{$event->title}}</h5>
-                            <h><strong>{{$event->date}}</strong></h><br>
+                            <h class="card-title display-4">{{$event->title}}</h><br>
+                            <h>Type: {{$event->eventType->name}}<br>
+                            <strong>Date: {{$event->date}}</strong></h><br>
                             <p class="card-text">{{$event->description}}</p>
-                            <p class="card-text"><small class="text-muted"><a href="{{route('event.details', compact('event'))}}">See Details</a></small></p>
+                            <p class="card-text"><small class="text-muted"><a href="{{route('event.seedetails', compact('event'))}}">See Details</a></small></p>
                         </div>
                     </div>
                     @endforeach

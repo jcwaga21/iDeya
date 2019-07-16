@@ -4,9 +4,6 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-2">
-            side bar here
-        </div>
         <div class="col-md-10">
             <div class="col-md-8">
                 <form method="POST" action="{{route('events.store')}}">
@@ -59,6 +56,7 @@
                 <div class="form-group">
                     <label for="guestspeaker">Guest Speaker:</label>
                     <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="e.g. Doctor Steven Strange">
+                    <a href="{{route('speaker')}}">Add Speaker</a>
                 </div>
                 <div class="form-group">
                     <button id="add_event" type="submit" class="btn btn-primary">Add Event</button>
