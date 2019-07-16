@@ -4,9 +4,6 @@
 
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-md-2">
-			side bar here			
-		</div>
 		<div class="col-md-10">
 			<div class="card">
 				<div class="card-header"><h4>{{$event->title}}</h4></div>	
@@ -66,7 +63,22 @@
                             </tr>
                             @endforeach 
                         </tbody>						
-					</table>				
+					</table>
+					<header>Items/Equipment Needed</header>
+					<table class="table table-bordered table-striped .table-responsive">
+						<thead  class="thead-dark">
+							<tr>
+								<th>Item</th>
+								<th>Number of Items</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Item </td>
+								<td>Number of Items</td>
+							</tr> 
+                        </tbody>						
+					</table>					
 				</div>			
 			</div>
 		</div>
