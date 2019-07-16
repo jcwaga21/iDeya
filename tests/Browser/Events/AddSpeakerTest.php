@@ -25,7 +25,7 @@ class AddSpeakerTest extends DuskTestCase
             $eventtype = factory(EventType::class)->create();
             $event = factory(Event::class)->create(['type_id' => $eventtype->id]);
 
-            $browser->visit(route('speaker', compact('event')))
+            $browser->visit(route('event.speaker', compact('event')))
 
             ->type('first_name', 'Dominique')
             ->type('last_name', 'Baes')
