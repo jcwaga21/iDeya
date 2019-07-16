@@ -35,7 +35,8 @@ Route::group(["prefix"=>'events'], function(){
 	
 });
 
-Route::post('events/{event}/create/addspeaker', "Event\AddSpeakerController")->name('speaker');
+Route::post('events/{event}/create/addspeaker', "Event\AddSpeakerController")->name('event.speaker');
+Route::get('events/{event}/create/addspeaker', "Event\AddSpeakerController")->name('speaker');
 
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');
