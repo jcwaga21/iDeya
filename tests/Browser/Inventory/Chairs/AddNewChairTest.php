@@ -14,7 +14,7 @@ class AddNewChairTest extends DuskTestCase
      *
      * @group Inventory
      */
-    public function successfullyAddedChair()
+    public function testSuccessfullyAddedChair()
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;

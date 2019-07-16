@@ -18,7 +18,7 @@ class AddChairController extends Controller
     {
     	$data = $request->except('_token');
     	Inventory::create($data);
-        return redirect()->route('inventory');
+        return redirect()->route('inventory.create');
     }
 
 }

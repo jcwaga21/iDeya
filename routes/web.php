@@ -49,6 +49,6 @@ Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
 
 
 Route::get('/inventory/create',"Inventory\CreateChairController")->name('inventory.create');
-Route::post('/inventory/view-inventory',"Inventory\AddChairController")->name('inventory.chair.add');
-Route::get('/inventory',"InventoryController@index")->name('inventory');
+Route::post('/inventory/create',"Inventory\AddChairController")->name('inventory.chair.add');
+//Route::get('/inventory',"InventoryController@index")->name('inventory');
 
