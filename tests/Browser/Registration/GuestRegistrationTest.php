@@ -67,4 +67,22 @@ class GuestRegistrationTest extends DuskTestCase
         });
     }
 
+    /**
+     * @test
+     * @group guest
+     */
+    public function errorMissingContactNumber()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit(route('home'))
+                ->click("#Co-Working-Guest")
+                ->type('first_name','Jane')
+                ->type('last_name','Doe')
+                ->type('email','jane@gmail.com')
+                ->type('schoolorganization','MSU-IIT')
+                ->select('purpose','consultation')
+                ->click('#submit')
+                ->assertSee('The contact number field is required.');
+        });
+    }
 }
