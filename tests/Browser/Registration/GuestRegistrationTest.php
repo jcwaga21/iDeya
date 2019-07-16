@@ -28,4 +28,23 @@ class GuestRegistrationTest extends DuskTestCase
                 ->assertSee('Welcome, Jane');
         });
     }
+
+    /**
+     * @test
+     * @group guest
+     */
+    public function errorMissingEmail()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit(route('home'))
+                ->click("#Co-Working-Guest")
+                ->type('first_name','Jane')
+                ->type('last_name','Doe')
+                ->type('contact_number','09358714654')
+                ->type('schoolorganization','MSU-IIT')
+                ->select('purpose','consultation')
+                ->click('#submit')
+                ->assertSee('The email field is required.');
+        });
+    }
 }
