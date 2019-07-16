@@ -5,6 +5,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Event::class, function (Faker $faker) {
     return [
+        //'image' =>$faker->image,
         'title' => $faker->word,
         'type_id' => random_int(1, EventType::count()),
         'date' => $faker->date,
@@ -15,6 +16,7 @@ $factory->define(App\Event::class, function (Faker $faker) {
         'status' => 'done',
         'reg_fee' => random_int(100, 500),
         'no_of_days' => random_int(1, 10),
+        'description' => $faker->paragraph,
         
     ];
 });
