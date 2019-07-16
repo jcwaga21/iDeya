@@ -14,16 +14,18 @@ class AddNewChairTest extends DuskTestCase
      *
      * @group Inventory
      */
-    public function testExample()
+    public function successfullyAddedChair()
     {
         $this->browse(function (Browser $browser) {
-            $model = $this->faker->name;
+            $brand = $this->faker->name;
 
             $browser->visit(route('inventory.create'))
-                ->type('model',$model)
+                ->type('name',$brand)
                 ->type('description',$this->faker->sentence)
+                ->type('quantity',21)
+                ->type('brand','Mandaue Foam')
                 ->click('#submit')
-                    ->assertSee($model);
+                    ->assertSee($brand);
         });
     }
 }
