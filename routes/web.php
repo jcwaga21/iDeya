@@ -47,3 +47,8 @@ Route::group(['prefix' => "inventory", "namespace" => "Inventory"], function() {
     Route::post('/view-inventory',"AddChairController")->name('inventory.chair.add');
 });
 
+Route::group(['prefix'=> "account", "namespace" => "Account"], function (){
+    Route::get('/{user}/change-password',"ChangePassword")->name('account.password.change');
+
+
+});
