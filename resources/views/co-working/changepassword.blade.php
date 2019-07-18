@@ -11,16 +11,6 @@
               <div class="container">
 
                 <div class="form-group">
-                  <label for="#email">Username</label>
-                  <input name="email" type="text" class="form-control" id="email">
-                </div>
-
-                <div class="form-group">
-                  <label for="#email">Default Password</label>
-                  <input name="email" type="text" class="form-control" id="email">
-                </div>
-
-                <div class="form-group">
                   <label for="contact_number">New Password</label>
                   <input name="contact_number" type="text" class="form-control" id="contact_number">
                 </div>
