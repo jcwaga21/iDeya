@@ -13,9 +13,9 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --ignore-platform-reqs --prefer-source --no-scripts
-  - php artisan key:generate
 
 script:
+  - php artisan key:generate
   - composer bdd-test
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs ; fi
 
