@@ -48,6 +48,7 @@ class GuestRegistrationTest extends DuskTestCase
         });
     }
 
+
     /**
      * @test
      * @group guest
@@ -85,4 +86,5 @@ class GuestRegistrationTest extends DuskTestCase
                 ->assertSee('The contact number field is required.');
         });
     }
+
 }
