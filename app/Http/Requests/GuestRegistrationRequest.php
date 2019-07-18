@@ -29,7 +29,6 @@ class GuestRegistrationRequest extends FormRequest
             "last_name" => "required|string",
             "email" => "required|email",
             "contact_number" => "required|string",
-            "schoolorganization" => "required|string",
             "purpose" => "required|string",
         ];
     }

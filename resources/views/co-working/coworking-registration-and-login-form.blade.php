@@ -94,7 +94,7 @@
                                                     <div class="form-group">
                                                         <label for="purpose">Purpose</label>
                                                             <select name="purpose" class="form-control">
-                                                                <option value="co-working">Employee</option>
+                                                                <option value="employee">Employee</option>
                                                                 <option value="co-working">Co-Working</option>
                                                                 <option value="internship">Internship</option>
                                                                 <option value="consultation">Consultation</option>
