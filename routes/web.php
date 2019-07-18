@@ -1,5 +1,7 @@
 <?php
 
+Auth::routes();
+
 Route::group(['middleware' => 'guest'], function() {
 
     Route::get('/', 'HomeController@index')->name('home');
@@ -26,7 +28,7 @@ Route::group(["prefix"=>'events'], function(){
 	
 });
 // should be grouped with the events above
-Route::group(['middleware' => "Event"], function() {
+Route::group(['namespace' => "Event"], function() {
     Route::get('events/{event}/register', "RegistrationPageController")->name('register');
     Route::post('events/{event}/participant',"AddParticipantController")->name('events.participant.add');
     Route::get('events/{event}/seedetails', "SeeDetails")->name('event.seedetails');
@@ -38,8 +40,9 @@ Route::group(['middleware' => "Event"], function() {
 
 
 //Route::resource('inventory', "InventoryController");
-Route::get('/',"InventoryController@index")->name('inventory');
+
 Route::group(['prefix' => "inventory", "namespace" => "Inventory"], function() {
+   // Route::get('/',"InventoryController@index")->name('inventory');
     Route::get('/create',"CreateChairController")->name('inventory.create');
     Route::post('/view-inventory',"AddChairController")->name('inventory.chair.add');
 });
