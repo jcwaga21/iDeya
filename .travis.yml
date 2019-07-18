@@ -10,12 +10,14 @@ matrix:
 before_install:
   - composer self-update
   - cp .env.example .env
+  - cp .env.dusk.example .env.dusk.local
 
 install:
   - travis_retry composer install --no-interaction --ignore-platform-reqs --prefer-source --no-scripts
 
 script:
   - php artisan key:generate
+  - php artisan key:generate --env=dusk.local
   - composer bdd-test
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs ; fi
 
