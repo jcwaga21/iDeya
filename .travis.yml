@@ -18,7 +18,7 @@ install:
 script:
   - php artisan key:generate
   - php artisan key:generate --env=dusk.local
-  - composer bdd-test
+  - composer unit-test
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs ; fi
 
 notifications:
