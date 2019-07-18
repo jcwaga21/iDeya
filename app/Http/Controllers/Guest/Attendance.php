@@ -13,8 +13,7 @@ class Attendance extends Controller
     public function __invoke(GuestRegistrationRequest $request)
     {
         $data = $request->except("_token");
-        if (in_array($data['purpose'],['employee','co-working','internship'])){
-
+        if (in_array($data['purpose'], ['employee','co-working','internship'])) {
             $data['username'] = $data['email'];
             $data['password'] = Hash::make('secret');
             unset($data['schoolorganization']);

@@ -6,6 +6,7 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
+
 class AddNewChairTest extends DuskTestCase
 {
     use WithFaker;
@@ -20,8 +21,8 @@ class AddNewChairTest extends DuskTestCase
             $model = $this->faker->name;
 
             $browser->visit(route('inventory.create'))
-                ->type('model',$model)
-                ->type('description',$this->faker->sentence)
+                ->type('model', $model)
+                ->type('description', $this->faker->sentence)
                 ->click('#submit')
                     ->assertSee($model);
         });

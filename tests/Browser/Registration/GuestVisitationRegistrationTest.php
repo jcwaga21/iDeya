@@ -19,12 +19,12 @@ class GuestVisitationRegistrationTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))
                 ->click("#Co-Working-Guest")
-                ->type('first_name','Jane')
-                ->type('last_name','Doe')
-                ->type('email','jane@gmail.com')
-                ->type('contact_number','09358714654')
-                ->type('schoolorganization','MSU-IIT')
-                ->select('purpose','visitation')
+                ->type('first_name', 'Jane')
+                ->type('last_name', 'Doe')
+                ->type('email', 'jane@gmail.com')
+                ->type('contact_number', '09358714654')
+                ->type('schoolorganization', 'MSU-IIT')
+                ->select('purpose', 'visitation')
                 ->click('#submit')
                 ->assertSee('Welcome, Jane');
         });
@@ -40,11 +40,11 @@ class GuestVisitationRegistrationTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))
                 ->click("#Co-Working-Guest")
-                ->type('first_name','Jane')
-                ->type('last_name','Doe')
-                ->type('contact_number','09358714654')
-                ->type('schoolorganization','MSU-IIT')
-                ->select('purpose','visitation')
+                ->type('first_name', 'Jane')
+                ->type('last_name', 'Doe')
+                ->type('contact_number', '09358714654')
+                ->type('schoolorganization', 'MSU-IIT')
+                ->select('purpose', 'visitation')
                 ->click('#submit')
                 ->assertSee('The email field is required.');
         });
@@ -60,10 +60,10 @@ class GuestVisitationRegistrationTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))
                 ->click("#Co-Working-Guest")
-                ->type('email','jane@gmail.com')
-                ->type('contact_number','09358714654')
-                ->type('schoolorganization','MSU-IIT')
-                ->select('purpose','visitation')
+                ->type('email', 'jane@gmail.com')
+                ->type('contact_number', '09358714654')
+                ->type('schoolorganization', 'MSU-IIT')
+                ->select('purpose', 'visitation')
                 ->click('#submit')
                 ->assertSee('The first name field is required.')
                 ->assertSee('The first name field is required.');
@@ -80,11 +80,11 @@ class GuestVisitationRegistrationTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))
                 ->click("#Co-Working-Guest")
-                ->type('first_name','Jane')
-                ->type('last_name','Doe')
-                ->type('email','jane@gmail.com')
-                ->type('schoolorganization','MSU-IIT')
-                ->select('purpose','visitation')
+                ->type('first_name', 'Jane')
+                ->type('last_name', 'Doe')
+                ->type('email', 'jane@gmail.com')
+                ->type('schoolorganization', 'MSU-IIT')
+                ->select('purpose', 'visitation')
                 ->click('#submit')
                 ->assertSee('The contact number field is required.');
         });
