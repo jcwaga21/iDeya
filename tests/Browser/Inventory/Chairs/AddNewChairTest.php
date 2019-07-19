@@ -7,7 +7,6 @@ use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
 
-
 class AddNewChairTest extends DuskTestCase
 {
     use WithFaker;
@@ -28,7 +27,7 @@ class AddNewChairTest extends DuskTestCase
                 ->type('name', $brand)
                 ->type('description', $this->faker->sentence)
                 ->type('quantity', 21)
-                ->type('brand','Mandaue Foam')
+                ->type('brand', 'Mandaue Foam')
                 ->click('#submit')
                 ->assertSee($brand);
         });
@@ -87,7 +86,7 @@ class AddNewChairTest extends DuskTestCase
             $browser->visit(route('inventory.create'))
                 ->type('name', $brand)
                 ->type('description', $this->faker->sentence)
-                ->type('brand','Mandaue Foam')
+                ->type('brand', 'Mandaue Foam')
                 ->click('#submit')
                 ->assertSee('The quantity field is required');
         });
@@ -123,9 +122,9 @@ class AddNewChairTest extends DuskTestCase
     public function shouldReturnAnErrorWithoutAll()
     {
         $this->browse(function (Browser $browser) {
-        $brand = $this->faker->name;
+            $brand = $this->faker->name;
 
-        $browser->visit(route('inventory.create'))
+            $browser->visit(route('inventory.create'))
             ->click('#submit')
             ->assertSee('The name field is required')
             ->assertSee('The description field is required')
@@ -133,7 +132,4 @@ class AddNewChairTest extends DuskTestCase
             ->assertSee('The quantity field is required');
         });
     }
-
-
-
 }
