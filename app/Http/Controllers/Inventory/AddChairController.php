@@ -16,8 +16,9 @@ class AddChairController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $data = $request->except('_token');
-        Inventory::create($data);
-        return redirect()->route('inventory');
+
+    	$data = $request->except('_token');
+    	Inventory::create($data);
+        return redirect()->route('inventory.create');
     }
 }

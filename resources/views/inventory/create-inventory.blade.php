@@ -1,17 +1,11 @@
 @extends('layouts.app')
 
-<!-- <form action="{{route('inventory.chair.add')}}" method="POST">
-	@csrf
-	<input type="text" name="model">
-	<input type="text" name="description">
-	<button id="submit">Submit</button>
-</form> -->
 @section('content')
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
 			<h4 class="text-center">Add New Entry</h4>
-			<form action="{{route('inventory.chair.add')}}">
+			<form action="{{route('inventory.create-inventory')}}" method="POST">
 				@csrf
 				<div class="form-group">
 				    <label class="control-label col-sm-2" for="name">Name:</label>
