@@ -23,7 +23,6 @@ class AddNewChairTest extends DuskTestCase
             $brand = $this->faker->name;
 
             $browser->visit(route('inventory.create'))
-
                 ->type('name',$brand)
                 ->type('description',$this->faker->sentence)
                 ->type('quantity',21)

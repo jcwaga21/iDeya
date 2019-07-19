@@ -34,7 +34,6 @@
 					<button type="submit" class="btn btn-primary" id="submit">Add</button>
 				</div>
 			</form>
-
 		</div>
 		<div class="col-sm-9">
 		<table class="table table-hover">
