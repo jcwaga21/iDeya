@@ -6,6 +6,7 @@ use App\Participant;
 use App\EventBudget;
 use App\EventParticipant;
 use Illuminate\Database\Seeder;
+use App\User;
 
 
 class DatabaseSeeder extends Seeder
@@ -30,5 +31,11 @@ class DatabaseSeeder extends Seeder
         for ($i=0; $i < Event::count(); $i++) { 
         	factory(EventBudget::class)->create(['budget_id'=> random_int(1, Budget::count()), 'event_id'=> random_int(1, Event::count())]);
         }
+
+        factory(User::class)->create([
+            'email' => 'admin@example.com',
+            'password' => Hash::make('secret'),
+            'purpose' => 'employee',
+        ]);
     }
 }
