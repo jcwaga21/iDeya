@@ -5,6 +5,15 @@
 		<div class="col-sm-3">
 			<h4 class="text-center">Add New Entry</h4>
 			<form action="{{route('inventory.chair.add')}}" method="POST">
+				@if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 				@csrf
 				<div class="form-group">
 				    <label class="control-label col-sm-2" for="name">Name:</label>
