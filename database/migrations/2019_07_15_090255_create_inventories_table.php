@@ -19,7 +19,7 @@ class CreateInventoriesTable extends Migration
             $table->text('description');
             $table->text('brand');
             $table->integer('quantity');
-            $table->integer('in')->default(21);
+            $table->integer('in')->default(0);
             $table->integer('out')->default(0);
 
             $table->timestamps();
