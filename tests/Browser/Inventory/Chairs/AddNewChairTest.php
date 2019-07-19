@@ -7,9 +7,11 @@ use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
 
+
 class AddNewChairTest extends DuskTestCase
 {
     use WithFaker;
+    use DatabaseMigrations;
     /**
      * A Dusk test example.
      *
