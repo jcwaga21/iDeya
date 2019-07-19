@@ -10,21 +10,126 @@ use Illuminate\Foundation\Testing\WithFaker;
 class AddNewChairTest extends DuskTestCase
 {
     use WithFaker;
+    use DatabaseMigrations;
     /**
      * A Dusk test example.
      *
      * @group Inventory
+     * @test
      */
-    public function testExample()
+
+    public function successfullyAddedChair()
     {
         $this->browse(function (Browser $browser) {
-            $model = $this->faker->name;
+            $brand = $this->faker->name;
 
             $browser->visit(route('inventory.create'))
-                ->type('model', $model)
+                ->type('name', $brand)
                 ->type('description', $this->faker->sentence)
+                ->type('quantity', 21)
+                ->type('brand', 'Mandaue Foam')
                 ->click('#submit')
-                    ->assertSee($model);
+                ->assertSee($brand);
+        });
+    }
+    /**
+     * A Dusk test example.
+     *
+     * @group Inventory
+     * @test
+     */
+    public function shouldReturnAnErrorWithoutName()
+    {
+        $this->browse(function (Browser $browser) {
+            $brand = $this->faker->name;
+
+            $browser->visit(route('inventory.create'))
+                ->type('description', $this->faker->sentence)
+                ->type('quantity', 21)
+                ->type('brand', 'Mandaue Foam')
+                ->click('#submit')
+                ->assertSee('The name field is required');
+        });
+    }
+    /**
+     * A Dusk test example.
+     *
+     * @group Inventory
+     * @test
+     */
+    public function shouldReturnAnErrorWithoutDescription()
+    {
+        $this->browse(function (Browser $browser) {
+            $brand = $this->faker->name;
+
+            $browser->visit(route('inventory.create'))
+                ->type('name', $brand)
+                ->type('quantity', 21)
+                ->type('brand', 'Mandaue Foam')
+                ->click('#submit')
+                ->assertSee('The description field is required');
+        });
+    }
+
+    /**
+     * A Dusk test example.
+     *
+     * @group Inventory
+     * @test
+     */
+
+    public function shouldReturnAnErrorWithoutQuantity()
+    {
+        $this->browse(function (Browser $browser) {
+            $brand = $this->faker->name;
+
+            $browser->visit(route('inventory.create'))
+                ->type('name', $brand)
+                ->type('description', $this->faker->sentence)
+                ->type('brand', 'Mandaue Foam')
+                ->click('#submit')
+                ->assertSee('The quantity field is required');
+        });
+    }
+    /**
+     * A Dusk test example.
+     *
+     * @group Inventory
+     * @test
+     */
+
+    public function shouldReturnAnErrorWithoutBrand()
+    {
+        $this->browse(function (Browser $browser) {
+            $brand = $this->faker->name;
+
+            $browser->visit(route('inventory.create'))
+                ->type('name', $brand)
+                ->type('description', $this->faker->sentence)
+                ->type('quantity', 21)
+                ->click('#submit')
+                ->assertSee('The brand field is required');
+        });
+    }
+
+    /**
+     * A Dusk test example.
+     *
+     * @group Inventory
+     * @test
+     */
+
+    public function shouldReturnAnErrorWithoutAll()
+    {
+        $this->browse(function (Browser $browser) {
+            $brand = $this->faker->name;
+
+            $browser->visit(route('inventory.create'))
+            ->click('#submit')
+            ->assertSee('The name field is required')
+            ->assertSee('The description field is required')
+            ->assertSee('The brand field is required')
+            ->assertSee('The quantity field is required');
         });
     }
 }
