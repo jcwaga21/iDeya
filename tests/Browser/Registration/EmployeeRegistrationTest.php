@@ -79,7 +79,7 @@ class EmployeeRegistrationTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))
                 ->click("#Co-Working-Guest")
-                ->type('email', 'jane@gmail.com')
+                ->type('coworking-email', 'jane@gmail.com')
                 ->type('contact_number', '09358714654')
                 ->type('schoolorganization', 'MSU-IIT')
                 ->select('purpose', 'employee')
@@ -100,7 +100,7 @@ class EmployeeRegistrationTest extends DuskTestCase
                 ->click("#Co-Working-Guest")
                 ->type('first_name', 'Jane')
                 ->type('last_name', 'Doe')
-                ->type('email', 'jane@gmail.com')
+                ->type('coworking-email', 'jane@gmail.com')
                 ->type('schoolorganization', 'MSU-IIT')
                 ->select('purpose', 'employee')
                 ->click('#submit')
