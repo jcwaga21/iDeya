@@ -1,41 +1,33 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Auth::routes();
 
+Route::group(['middleware' => 'guest'], function() {
 
-Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
 
-Route::resource('inventory', "InventoryController");
-//Route::resource('events', "EventController");
-Route::get('events/{event}/register', "Event\RegistrationPageController")->name('register');
-Route::post('events/{event}/participant',"Event\AddParticipantController")
-		->name('events.participant.add');
-Route::get('events/{event}/seedetails', "Event\SeeDetails")->name('event.seedetails');
+    Route::view('/co-working', "co-working")->name('co-working');
+    Route::view('/guest',"guest")->name('guest');
 
-Route::get('events/{participant}/welcome', "Event\WelcomeController")->name('event.welcome');
+    Route::post('/co-working',"CoWorking\Attendance")->name('co-working.attendance');
+    Route::get('/co-working/welcome/{user}',"CoWorking\Welcome")->name('co-working.welcome');
+    Route::view('/co-working/coworking-registration-and-login-form',"co-working.coworking-registration-and-login-form")
+        ->name('co-working.coworking-registration-and-login-form');
 
-Route::group(["prefix"=>'events'], function(){
-    
-    Route::get('/',"EventController@index")->name('events.index');
-    Route::get('/create', "EventController@create")->name('events.create');
-    Route::post('/', "EventController@store")->name('events.store');	
-	Route::get('/{event}/detail',"ShowDetail")->name('event.details');
-	
+    Route::post('/guest',"Guest\Attendance")->name('guest.attendance');
+    Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
 });
 
-Route::get('events/create/addspeaker', "Event\AddSpeakerController")->name('speaker');
+
+Route::group(["prefix" => 'events'], function(){
+	Route::group(['namespace'=>"Event"], function(){
+		Route::get('/{event}/register', "RegistrationPageController")->name('register');
+	    Route::post('/{event}/participant',"AddParticipantController")->
+	    	name('events.participant.add');
+	    Route::get('/{event}/seedetails', "SeeDetails")->name('event.seedetails');
+	    Route::get('/{participant}/welcome', "WelcomeController")->name('event.welcome');
+	});
+});
 
 Route::view('/co-working', "co-working")->name('co-working');
 Route::view('/guest',"guest")->name('guest');
@@ -50,4 +42,30 @@ Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
 
 Route::get('/inventory/create',"Inventory\CreateChairController")->name('inventory.create');
 Route::post('/inventory/view-inventory',"Inventory\AddChairController")->name('inventory.chair.add');
-Route::get('/inventory',"InventoryController@index")->name('inventory');	
+Route::get('/inventory',"InventoryController@index")->name('inventory');
+
+// pages that only the admin can access ->private
+Route::group(['middleware' => 'auth'], function(){
+	Route::group(['namespace' => "Event"], function() {
+		Route::get('/',"EventController@index")->name('events.index');
+		Route::get('/create', "EventController@create")->name('events.create');
+		Route::post('/', "EventController@store")->name('events.store');
+		Route::get('/{event}/detail',"ShowDetail")->name('event.details');
+		Route::post('/create/addspeaker', "AddSpeakerController")->
+			name('event.speaker');
+		Route::get('/create/addspeaker', "AddSpeakerController")->name('event.speaker');
+	});
+	Route::group(['prefix' => "dashboard", "namespace" => "Dashboard"], function() {
+	    Route::view('/',"dashboard.index")->name('dashboard.index');
+});
+
+	Route::group(['prefix' => "inventory", "namespace" => "Inventory"], function() {
+	    Route::post('/',"AddChairController")->name('inventory.chair.add');
+	    Route::get('/create',"CreateChairController")->name('inventory.create');
+	});
+
+	Route::group(['prefix'=> "account", "namespace" => "Account"], function (){
+	    Route::get('/{user}/change-password',"ChangePassword")->name('account.password.change');
+	});
+
+});

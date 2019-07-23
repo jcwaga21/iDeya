@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Inventory;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class CoWorkingRegistrationRequest extends FormRequest
+class CreateChairRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +13,7 @@ class CoWorkingRegistrationRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::guest();
+        return true;
     }
 
     /**
@@ -25,10 +24,10 @@ class CoWorkingRegistrationRequest extends FormRequest
     public function rules()
     {
         return [
-            "first_name" => "required|string",
-            "last_name" => "required|string",
-            "email" => "required|email",
-            "contact_number" => "required|string",
+            "name" => "required|string",
+            "description" => "required|string",
+            "brand" => "required|string",
+            "quantity" => "required|integer",
         ];
     }
 }
