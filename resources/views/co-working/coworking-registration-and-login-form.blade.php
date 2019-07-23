@@ -12,10 +12,10 @@
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-                                    <input type="email" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required autofocus id="email" placeholder="Enter email" name="email">
-                                        @if ($errors->has('email'))
+                                    <input type="email" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{ old('coworking-email') }}" required autofocus id="coworking-email" placeholder="Enter email" name="coworking-email">
+                                        @if ($errors->has('coworking-email'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('coworking-email') }}</strong>
                                         </span>
                                          @endif
                                 </div>
@@ -78,7 +78,7 @@
 
                                                 <div class="form-group">
                                                     <label for="#email">Email Address</label>
-                                                    <input name="coworking-email" type="text" class="form-control" id="coworking-email" placeholder=" e.g. username@email.com">
+                                                    <input name="email" type="text" class="form-control" id="email" placeholder=" e.g. username@email.com">
                                                 </div>
 
                                                 <div class="form-group">
