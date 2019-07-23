@@ -9,7 +9,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 
-
 class AddNewChairTest extends DuskTestCase
 {
     use WithFaker;
@@ -25,7 +24,7 @@ class AddNewChairTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;
-            $user =factory(User::class)->create([
+            $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
             'purpose' => 'employee',
@@ -50,11 +49,11 @@ class AddNewChairTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;
-            $user =factory(User::class)->create([
+            $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
             'purpose' => 'employee',
-        ]);
+            ]);
 
             $browser->loginAs($user)->visit(route('inventory.create'))
                 ->type('description', $this->faker->sentence)
@@ -74,7 +73,7 @@ class AddNewChairTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;
-            $user =factory(User::class)->create([
+            $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
             'purpose' => 'employee',
@@ -100,7 +99,7 @@ class AddNewChairTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;
-            $user =factory(User::class)->create([
+            $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
             'purpose' => 'employee',
@@ -124,7 +123,7 @@ class AddNewChairTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;
-            $user =factory(User::class)->create([
+            $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
             'purpose' => 'employee',
@@ -149,7 +148,7 @@ class AddNewChairTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $brand = $this->faker->name;
-            $user =factory(User::class)->create([
+            $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
             'purpose' => 'employee',

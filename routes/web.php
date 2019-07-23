@@ -18,7 +18,6 @@ Route::group(['middleware' => 'guest'], function() {
     Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
 });
 
-
 Route::group(["prefix" => 'events'], function(){
 	Route::group(['namespace'=>"Event"], function(){
 		Route::get('/{event}/register', "RegistrationPageController")->name('register');
@@ -45,7 +44,7 @@ Route::post('/inventory/view-inventory',"Inventory\AddChairController")->name('i
 Route::get('/inventory',"InventoryController@index")->name('inventory');
 
 // pages that only the admin can access ->private
-Route::group(['middleware' => 'auth'], function(){
+Route::group([ 'prefix' => 'events', 'middleware' => 'auth'], function(){
 	Route::group(['namespace' => "Event"], function() {
 		Route::get('/',"EventController@index")->name('events.index');
 		Route::get('/create', "EventController@create")->name('events.create');
