@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Event;
+namespace App\Http\Controllers;
 
 use App\Event;
 use App\EventType;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\CreateEventRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
@@ -19,6 +18,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
+
         return view('event.index', compact('events'));
     }
 
@@ -41,16 +41,10 @@ class EventController extends Controller
      */
     public function store(CreateEventRequest $request)
     {
-        $data = $request->except(['_token', 'guestspeaker', 'speaker_id']);
+        $data = $request->except('_token');
         $data['slug'] = Str::slug($data['title']);
-        $event = Event::create($data);
 
-        if ($request->post('speaker_id') == 0) {
-            $speaker = Speaker::firstOrCreate(['full_name' => $request->post('guestspeaker')]);
-            SpeakerEvent::create(['event_id' => $event->id, 'speaker_id' => $speaker->id]);
-        } else {
-            SpeakerEvent::create(['event_id' => $event->id, 'speaker_id' => $request->post('speaker_id')]);
-        }
+        Event::create($data);
 
         return redirect()->route('events.index');
     }
