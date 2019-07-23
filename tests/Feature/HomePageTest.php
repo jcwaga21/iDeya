@@ -19,6 +19,8 @@ class HomePageTest extends TestCase
     public function showDisplayOnGoingEvent()
     {
         $eventtype = factory(EventType::class)->create();
+/*
+        $event = factory(Event::class)->create(['title' => 'iDeyaHack', 'status' => 'on-going', 'type_id' => $eventtype->id]);*/
         $event = factory(Event::class)->create(
             [
                 'title' => 'iDeyaHack',
@@ -28,6 +30,7 @@ class HomePageTest extends TestCase
         );
 
         $response = $this->get(route('home'));
+
         $response->assertStatus(200);
         $response->assertSeeText('iDeyaHack');
     }
