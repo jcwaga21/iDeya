@@ -16,6 +16,10 @@ Route::group(['middleware' => 'guest'], function() {
 
     Route::post('/guest',"Guest\Attendance")->name('guest.attendance');
     Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
+
+    Route::group(['prefix'=> "account", "namespace" => "Account"], function (){
+        Route::view('/{user}/change-password',"co-working.changepassword")->name('account.password.change');
+    });
 });
 
 
@@ -27,6 +31,9 @@ Route::group(["prefix"=>'events'], function(){
 	Route::get('/{event}/detail',"ShowDetail")->name('event.details');
 	
 });
+
+
+
 // should be grouped with the events above
 Route::group(['middleware' => 'auth'], function() {
 	Route::group(['namespace' => "Event"], function() {
@@ -47,8 +54,6 @@ Route::group(['middleware' => 'auth'], function() {
 	    Route::get('/create',"CreateChairController")->name('inventory.create');
 	});
 
-	Route::group(['prefix'=> "account", "namespace" => "Account"], function (){
-	    Route::get('/{user}/change-password',"ChangePassword")->name('account.password.change');
-	});
+
 
 });
