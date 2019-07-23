@@ -56,7 +56,8 @@
                 <div class="form-group">
                     <label for="guestspeaker">Guest Speaker:</label>
                     <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="e.g. Doctor Steven Strange">
-                    <a href="{{route('speaker')}}">Add Speaker</a>
+                    <a href="{{route('event.speaker')}}">Add Speaker</a>
+                    <input type="hidden" name="speaker_id" value="0">
                 </div>
                 <div class="form-group">
                     <button id="add_event" type="submit" class="btn btn-primary">Add Event</button>

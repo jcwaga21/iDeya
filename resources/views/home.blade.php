@@ -9,7 +9,8 @@
                 <div class="card-header">
                     <h5>Not an event participant? Log-in here:</h5>
                     <div class="btn-group" role="group">
-                        <a class="btn btn-outline-secondary" id="Co-Working-Guest" href="{{route('co-working.coworking-registration-and-login-form')}}">Co-working / Guest</a>
+                        <a class="btn btn-outline-secondary" id="Co-Working" href="{{route('co-working.coworking-registration-and-login-form')}}">Co-working</a>
+                        <a class=" btn btn-outline-secondary" id="guest" href="{{route('guest')}}">Guest</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -22,7 +23,7 @@
                     {{$ongoingEvent->description}}<br><br>
                     Registration Fee: {{$ongoingEvent->reg_fee}}</h5><br><br>
                     <h5>Interested?</h5>
-                    <a href="{{route('register', compact('ongoingEvent'))}}" class="btn btn-lg btn-success">Register Now</a>
+                    <a href="{{route('event.register', compact('ongoingEvent'))}}" class="btn btn-lg btn-success">Register Now</a>
                     <p class="card-text"><small class="text-muted"><a href="{{route('event.seedetails', compact('ongoingEvent'))}}">See Details</a></small></p>
                     @endunless
                 </div>

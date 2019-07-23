@@ -11,6 +11,6 @@ class AddSpeakerController extends Controller
     public function __invoke(Request $request, Event $event)
     {
         $data = $request->except('_token');
-        return view('speaker', compact('event'));
+        return view('event.speaker', compact('event'));
     }
 }
