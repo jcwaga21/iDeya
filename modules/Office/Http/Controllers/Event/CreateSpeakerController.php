@@ -13,6 +13,6 @@ class CreateSpeakerController extends Controller
     {
         $speaker = AdminEventSpeaker::all();
 
-        return view('office::adminevent.speaker.add', compact('event'));
+        return view('office::adminevent.speaker.create', compact('event'));
     }
 }
