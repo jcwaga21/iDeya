@@ -27,7 +27,7 @@ class EmployeeLoginTest extends DuskTestCase
         ]);
         $this->browse(function (Browser $browser) {
             $browser->visit(route('co-working.coworking-registration-and-login-form'))
-                    ->type('email', 'jcwaga21@gmail.com')
+                    ->type('coworking-email', 'jcwaga21@gmail.com')
                     ->type('password', 'secret')
                     ->click('#login')
                     ->assertSee('Welcome!');
