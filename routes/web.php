@@ -32,7 +32,7 @@ Route::group(['middleware' => 'guest'], function() {
 });
 
 // should be grouped with the events above
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['prefix'=>'event', 'middleware' => 'auth'], function() {
 	Route::group(['namespace' => "Event"], function() {
 		Route::get('/',"EventController@index")->name('events.index');
 		Route::get('/create', "EventController@create")->name('events.create');
