@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Event;
 
 use App\Event;
 use App\EventType;
-use App\Http\Requests\Events\CreateEventRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Events\CreateEventRequest;
 
 class EventController extends Controller
 {
@@ -18,7 +19,6 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
-
         return view('event.index', compact('events'));
     }
 
