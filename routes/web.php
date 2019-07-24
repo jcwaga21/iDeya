@@ -1,6 +1,6 @@
 <?php
 
-Auth::routes();
+//Auth::routes();
 
 Route::group(['middleware' => 'guest'], function() {
 
@@ -53,7 +53,4 @@ Route::group(['middleware' => 'auth'], function() {
 	    Route::post('/',"AddChairController")->name('inventory.chair.add');
 	    Route::get('/create',"CreateChairController")->name('inventory.create');
 	});
-
-
-
 });
