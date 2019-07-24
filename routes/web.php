@@ -11,8 +11,8 @@ Route::group(['middleware' => 'guest'], function() {
 
     Route::post('/co-working',"CoWorking\Attendance")->name('co-working.attendance');
     Route::get('/co-working/welcome/{user}',"CoWorking\Welcome")->name('co-working.welcome');
-    Route::view('/co-working/coworking-registration-and-login-form',"co-working.coworking-registration-and-login-form")
-        ->name('co-working.coworking-registration-and-login-form');
+    Route::view('/guest/registration',"guest.registration")
+        ->name('registration');
 
     Route::post('/guest',"Guest\Attendance")->name('guest.attendance');
     Route::get('/guest/{user}/welcome',"Guest\Welcome")->name('guest.welcome');
