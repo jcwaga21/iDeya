@@ -24,12 +24,12 @@ Route::group(['middleware' => 'guest'], function() {
 
 
 Route::group(["prefix"=>'events'], function(){
-    
-    Route::get('/',"EventController@index")->name('events.index');
-    Route::get('/create', "EventController@create")->name('events.create');
-    Route::post('/', "EventController@store")->name('events.store');	
-	Route::get('/{event}/detail',"ShowDetail")->name('event.details');
-	
+	Route::group(['namespace' => "Event"], function(){
+		Route::get('/{event}/register', "RegistrationPageController")->name('register');
+		Route::post('/{event}/participant',"AddParticipantController")->name('events.participant.add');
+		Route::get('/{event}/seedetails', "SeeDetails")->name('event.seedetails');
+		Route::get('/{participant}/welcome', "WelcomeController")->name('event.welcome');    
+	});
 });
 
 
@@ -37,10 +37,9 @@ Route::group(["prefix"=>'events'], function(){
 // should be grouped with the events above
 Route::group(['middleware' => 'auth'], function() {
 	Route::group(['namespace' => "Event"], function() {
-	    Route::get('events/{event}/register', "RegistrationPageController")->name('register');
-	    Route::post('events/{event}/participant',"AddParticipantController")->name('events.participant.add');
-	    Route::get('events/{event}/seedetails', "SeeDetails")->name('event.seedetails');
-	    Route::get('events/{participant}/welcome', "WelcomeController")->name('event.welcome');
+		Route::get('/',"EventController@index")->name('events.index');
+		Route::get('/create', "EventController@create")->name('events.create');
+		Route::post('/', "EventController@store")->name('events.store');
 	    Route::post('events/{event}/create/addspeaker', "AddSpeakerController")->name('event.speaker');
 	    Route::get('events/{event}/create/addspeaker', "AddSpeakerController")->name('speaker');
 	});
@@ -53,4 +52,5 @@ Route::group(['middleware' => 'auth'], function() {
 	    Route::post('/',"AddChairController")->name('inventory.chair.add');
 	    Route::get('/create',"CreateChairController")->name('inventory.create');
 	});
+	Route::get('/{event}/detail',"ShowDetail")->name('event.details');
 });
