@@ -40,7 +40,7 @@ class CreateNewEmployeeRecordTest extends DuskTestCase
                 ->type('email', 'jade@gmail.com')
                 ->click('#add_employee')
                 ->assertSee('Employee Listing')
-                ->assertSee('Jade Doe');
+                ->assertSee(' Jade Doe');
 
             $this->assertDatabaseHas(
                 'employees',
