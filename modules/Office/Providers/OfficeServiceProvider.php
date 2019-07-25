@@ -30,7 +30,7 @@ class OfficeServiceProvider extends ServiceProvider
             $event->menu->add('MAIN NAVIGATION');
             $event->menu->add([
                 'text' => 'Employee',
-                'url' => route('employee.create'),
+                'url' => route('employee.listing'),
             ]);
         });
     }
