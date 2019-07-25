@@ -16,7 +16,6 @@ class CreateNewEmployeeRecordTest extends DuskTestCase
      * 403 error if two testing executed
      *
      * @return void
-     * @test
      * @group employee
      * @group cannotSubmitDuplicateRecords
      *
