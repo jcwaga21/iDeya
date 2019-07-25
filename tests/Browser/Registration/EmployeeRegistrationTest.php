@@ -14,7 +14,7 @@ class EmployeeRegistrationTest extends DuskTestCase
      *
      * @return void
      * @test
-     * @group employee
+     *
      */
     public function successfulEmployeeRegistrationAndShouldChangePassword()
     {
@@ -34,7 +34,7 @@ class EmployeeRegistrationTest extends DuskTestCase
 
     /**
      * @test
-     * @group employee
+     *
      */
     public function successfulEmployeeRegistrationWithoutSchoolOrganizationAndShouldChangePassword()
     {
@@ -53,7 +53,7 @@ class EmployeeRegistrationTest extends DuskTestCase
 
     /**
      * @test
-     * @group employee
+     *
      */
     public function errorMissingEmail()
     {
@@ -72,7 +72,7 @@ class EmployeeRegistrationTest extends DuskTestCase
 
     /**
      * @test
-     * @group employee
+     *
      */
     public function errorMissingFirstnameAndLastname()
     {
@@ -91,7 +91,7 @@ class EmployeeRegistrationTest extends DuskTestCase
 
     /**
      * @test
-     * @group employee
+     *
      */
     public function errorMissingContactNumber()
     {

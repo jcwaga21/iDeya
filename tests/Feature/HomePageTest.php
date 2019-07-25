@@ -15,13 +15,13 @@ class HomePageTest extends TestCase
      * A basic feature test example.
      *
      * @test
+     * @group home
      */
     public function showDisplayOnGoingEvent()
     {
         $eventtype = factory(EventType::class)->create();
-/*
-        $event = factory(Event::class)->create(['title' => 'iDeyaHack', 'status' => 'on-going', 'type_id' => $eventtype->id]);*/
-        $event = factory(Event::class)->create(
+
+        factory(Event::class)->create(
             [
                 'title' => 'iDeyaHack',
                 'status' => 'on-going',

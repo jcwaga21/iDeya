@@ -1,12 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::view('login', "office::login")->name('office.login');
+Route::post('login', "LoginController")->name('office.login.submit');
+
+Route::group(['middleware'=> 'auth'], function(){
+    Route::view('employees/create', 'office::employee.create')->name('employee.create');
+    Route::post('employees', 'Employee\CreateEmployeeController')->name('employee.store');
+    Route::get('employees', 'Employee\EmployeeListingController')->name('employee.listing');
+});

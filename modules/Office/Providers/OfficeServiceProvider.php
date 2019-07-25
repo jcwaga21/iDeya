@@ -2,8 +2,10 @@
 
 namespace Modules\Office\Providers;
 
+use Illuminate\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 
 class OfficeServiceProvider extends ServiceProvider
 {
@@ -12,15 +14,26 @@ class OfficeServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Dispatcher $events)
     {
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->loadNavigationLinks($events);
     }
 
+    private function loadNavigationLinks(Dispatcher $events)
+    {
+        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+            $event->menu->add('MAIN NAVIGATION');
+            $event->menu->add([
+                'text' => 'Employee',
+                'url' => route('employee.create'),
+            ]);
+        });
+    }
     /**
      * Register the service provider.
      *
