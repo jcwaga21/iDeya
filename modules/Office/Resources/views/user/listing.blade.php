@@ -7,7 +7,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Employee Listings</h4>
+                        <h4>User Listing</h4>
                         <a class="btn btn-primary" id="create-employee" href="{{route('employee.create')}}">Create Employee</a>
                         <a class="btn btn-primary" id="create-employee" >Create Intern</a>
                         <a class="btn btn-primary" id="create-employee" >Create Co-Working</a>
@@ -19,16 +19,16 @@
                                 <th>Full Name</th>
                                 <th>Contact Number</th>
                                 <th>Email</th>
-                                <th>Position</th>
+                                <th>Type</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($employees as $employee)
+                            @foreach($users as $user)
                                 <tr>
-                                    <td> {{$employee->fullName()}} </td>
-                                    <td> {{$employee->contact_number}} </td>
-                                    <td> {{$employee->email}} </td>
-                                    <td> {{$employee->position}} </td>
+                                    <td> {{$user->fullName()}} </td>
+                                    <td> {{$user->contactNumber()}} </td>
+                                    <td> {{$user->email}} </td>
+                                    <td> {{$user->type}} </td>
                                 </tr>
                             @endforeach
                             </tbody>

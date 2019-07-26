@@ -7,7 +7,7 @@ use App\EventBudget;
 use App\EventParticipant;
 use Illuminate\Database\Seeder;
 use App\User;
-
+use Modules\Office\Entities\Employee;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,8 +32,17 @@ class DatabaseSeeder extends Seeder
         	factory(EventBudget::class)->create(['budget_id'=> random_int(1, Budget::count()), 'event_id'=> random_int(1, Event::count())]);
         }
 
+
+
+        $employee = factory(Employee::class)
+            ->create([
+                'email' => 'admin@example.com',
+                'first_name' => 'Jade',
+                'last_name' => 'Doe',
+                'contact_number' => '09358711471']);
+
         factory(User::class)->create([
-            'email' => 'admin@example.com',
+            'email' => $employee->email,
             'password' => Hash::make('secret'),
         ]);
     }

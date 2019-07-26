@@ -29,8 +29,8 @@ class OfficeServiceProvider extends ServiceProvider
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
             $event->menu->add('MAIN NAVIGATION');
             $event->menu->add([
-                'text' => 'Employee',
-                'url' => route('employee.create'),
+                'text' => 'Users',
+                'url' => route('users.listing'),
             ]);
         });
     }
