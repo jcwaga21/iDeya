@@ -101,20 +101,17 @@ class CreateNewEmployeeRecordTest extends DuskTestCase
                 ->type('first_name', 'Jade')
                 ->type('last_name', 'Doe')
                 ->type('contact_number', '09123456789')
-                ->type('position', 'employee')
+                ->type('position', 'staff')
                 ->type('email', 'jade@gmail.com')
                 ->click('#add_employee')
                 ->assertSee('Employee Listing')
                 ->assertSee('Jade Doe');
 
             $this->assertDatabaseHas(
-                'employees',
+                'users',
                 [
-                   'first_name' => 'Jade',
-                    'last_name' => 'Doe',
-                    'contact_number' => '09123456789',
-                    'position' => 'employee',
                     'email' => 'jade@gmail.com',
+                    'type' => 'employee'
                 ]
             );
         });
