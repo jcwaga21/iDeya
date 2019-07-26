@@ -9,6 +9,8 @@
                     <div class="card-header">
                         <h4>Employee Listings</h4>
                         <a class="btn btn-primary" id="create-employee" href="{{route('employee.create')}}">Create Employee</a>
+                        <a class="btn btn-primary" id="create-employee" >Create Intern</a>
+                        <a class="btn btn-primary" id="create-employee" >Create Co-Working</a>
                     </div>
                     <div class="card-body">
                         <table class="table table table-bordered table-striped .table-responsive">
@@ -16,8 +18,8 @@
                             <tr>
                                 <th>Full Name</th>
                                 <th>Contact Number</th>
-                                <th>Position</th>
                                 <th>Email</th>
+                                <th>Position</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -25,8 +27,8 @@
                                 <tr>
                                     <td> {{$employee->fullName()}} </td>
                                     <td> {{$employee->contact_number}} </td>
-                                    <td> {{$employee->position}} </td>
                                     <td> {{$employee->email}} </td>
+                                    <td> {{$employee->position}} </td>
                                 </tr>
                             @endforeach
                             </tbody>
