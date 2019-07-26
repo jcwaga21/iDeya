@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <form method="POST" action="{{route('employee.store')}}">
                         @csrf
-                        <h3>Create a new Event:</h3><br>
+                        <h3>Create a new Employee:</h3><br>
                         <div class="form-group">
                             <label for="first_name">First Name:</label>
                             <input name="first_name" class="form-control" id="first_name" type="text" placeholder="e.g. Jane">
@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="position">Position:</label>
-                            <input name="position" class="form-control" id="position" type="text" placeholder="e.g. Intern">
+                            <input name="position" class="form-control" id="position" type="text" placeholder="Office Staff">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
