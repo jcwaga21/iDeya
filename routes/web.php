@@ -5,6 +5,9 @@
 Route::group(['middleware' => 'guest'], function() {
 
     Route::get('/', 'HomeController@index')->name('home');
+   /* Route::get('/login', function(){
+    	return redirect()->route('office.login');
+    });*/
 
     Route::view('/co-working', "co-working")->name('co-working');
     Route::view('/guest',"guest")->name('guest');
@@ -36,7 +39,7 @@ Route::group(["prefix"=>'events'], function(){
 
 // should be grouped with the events above
 Route::group(['middleware' => 'auth'], function() {
-	Route::group(['namespace' => "Event"], function() {
+	Route::group(['namespace' => "Event", 'prefix' => "events"], function() {
 		Route::get('/',"EventController@index")->name('events.index');
 		Route::get('/create', "EventController@create")->name('events.create');
 		Route::post('/', "EventController@store")->name('events.store');
