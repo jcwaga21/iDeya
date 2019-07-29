@@ -42,7 +42,7 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="purpose">Purpose</label>
-                                     <select name="purpose" class="form-control"
+                                     <select name="purpose" class="form-control">
                                          <option value="consultation">Consultation</option>
                                          <option value="visitation">Visitation</option>
                                      </select>
