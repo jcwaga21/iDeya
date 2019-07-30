@@ -27,7 +27,7 @@ class AddNewChairTest extends DuskTestCase
             $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
             ]);
             $browser->loginAs($user)->visit(route('inventory.create'))
                 ->type('name', $brand)
@@ -51,7 +51,7 @@ class AddNewChairTest extends DuskTestCase
             $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
             ]);
 
             $browser->loginAs($user)->visit(route('inventory.create'))
@@ -75,7 +75,7 @@ class AddNewChairTest extends DuskTestCase
             $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
             ]);
 
             $browser->loginAs($user)->visit(route('inventory.create'))
@@ -101,7 +101,7 @@ class AddNewChairTest extends DuskTestCase
             $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
             ]);
             $browser->loginAs($user)->visit(route('inventory.create'))
                 ->type('name', $brand)
@@ -125,7 +125,7 @@ class AddNewChairTest extends DuskTestCase
             $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
             ]);
             $browser->loginAs($user)->visit(route('inventory.create'))
                 ->type('name', $brand)
@@ -150,7 +150,7 @@ class AddNewChairTest extends DuskTestCase
             $user = factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
             ]);
             $browser->loginAs($user)->visit(route('inventory.create'))
             ->click('#submit')
