@@ -23,7 +23,7 @@ class EmployeeLoginTest extends DuskTestCase
         factory(User::class)->create([
             'email' => 'jcwaga21@gmail.com',
             'password' => Hash::make('secret'),
-            'purpose' => 'employee',
+            'type' => 'employee',
         ]);
         $this->browse(function (Browser $browser) {
             $browser->visit(route('login'))

@@ -11,4 +11,7 @@ Route::group(['middleware'=> 'auth'], function(){
 
     Route::get('users', 'User\UserListingController')->name('users.listing');
 
+    Route::get('interns', 'Intern\InternListingController')->name('interns.listing');
+    Route::view('/interns/create', 'office::intern.create')->name('intern.create');
+    Route::post('/intern', 'Intern\CreateInternController')->name('intern.store');
 });

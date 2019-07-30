@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Modules\Office\Entities\Employee;
+use Modules\Office\Entities\Intern;
 
 class User extends Authenticatable
 {
@@ -41,12 +42,23 @@ class User extends Authenticatable
 
     public function fullName()
     {
-        return Employee::whereEmail($this->email)->first()->fullName();
+        switch (strtolower($this->type)) {
+            case "employee":
+                return Employee::whereEmail($this->email)->first()->fullName();
+            case "intern":
+                return Intern::whereEmail($this->email)->first()->fullName();
+        }
     }
 
     public function contactNumber()
     {
-        return Employee::whereEmail($this->email)->first()->contact_number;
+        switch (strtolower($this->type)) {
+            case "employee":
+                return Employee::whereEmail($this->email)->first()->contact_number;
+            case "intern":
+                return Intern::whereEmail($this->email)->first()->contact_number;
+        }
+
     }
 
 }
