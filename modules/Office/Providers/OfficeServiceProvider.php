@@ -32,11 +32,14 @@ class OfficeServiceProvider extends ServiceProvider
                 'text' => 'Users',
                 'url' => route('users.listing'),
             ]);
-             $event->menu->add([
+            $event->menu->add([
                 'text' => 'Attendance',
                 'url' => route('users.listing'),
             ]);
-
+            $event->menu->add([
+                'text' => 'Events',
+                'url' => route('adminevent.index'),
+            ]);
         });
     }
     /**
