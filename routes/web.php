@@ -36,6 +36,7 @@ Route::group(["prefix"=>'events'], function(){
 });
 
 // should be grouped with the events above
+
 Route::group(['middleware' => 'auth'], function() {
 	Route::group(['prefix' => "dashboard", "namespace" => "Dashboard"], function() {
 	    Route::view('/',"dashboard.index")->name('dashboard.index');
