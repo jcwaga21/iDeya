@@ -21,7 +21,6 @@ class CreateInternController extends Controller
         $user['remember_token'] = $request->post('_token');
         $user['type'] = 'internship';
         User::create($user);
-
         return redirect()->route('users.listing');
     }
 }
