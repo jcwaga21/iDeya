@@ -35,18 +35,8 @@ Route::group(["prefix"=>'events'], function(){
 	});
 });
 
-
-
 // should be grouped with the events above
 Route::group(['middleware' => 'auth'], function() {
-	Route::group(['namespace' => "Event", 'prefix' => "events"], function() {
-		Route::get('/',"EventController@index")->name('events.index');
-		Route::get('/create', "EventController@create")->name('events.create');
-		Route::post('/', "EventController@store")->name('events.store');
-	    Route::post('events/{event}/create/addspeaker', "AddSpeakerController")->name('event.speaker');
-	    Route::get('events/{event}/create/addspeaker', "AddSpeakerController")->name('speaker');
-	});
-
 	Route::group(['prefix' => "dashboard", "namespace" => "Dashboard"], function() {
 	    Route::view('/',"dashboard.index")->name('dashboard.index');
 	});
@@ -55,5 +45,6 @@ Route::group(['middleware' => 'auth'], function() {
 	    Route::post('/',"AddChairController")->name('inventory.chair.add');
 	    Route::get('/create',"CreateChairController")->name('inventory.create');
 	});
+	
 	Route::get('/{event}/detail',"ShowDetail")->name('event.details');
 });
