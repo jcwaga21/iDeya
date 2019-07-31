@@ -22,6 +22,6 @@ class CreateEmployeeController extends Controller
         $user['type'] = 'employee';
         User::create($user);
 
-        return redirect()->route('employee.listing');
+        return redirect()->route('users.listing');
     }
 }
