@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CoWorking extends Model
 {
-    protected $fillable = [];
+    protected $guarded = [];
 }

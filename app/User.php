@@ -58,7 +58,5 @@ class User extends Authenticatable
             case "intern":
                 return Intern::whereEmail($this->email)->first()->contact_number;
         }
-
     }
-
 }

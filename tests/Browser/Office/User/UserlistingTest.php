@@ -42,7 +42,6 @@ class UserlistingTest extends DuskTestCase
                 ->assertSee('09358711471')
                 ->assertSee('jc@gmail.com')
                 ->assertSee('employee');
-
         });
     }
 }
