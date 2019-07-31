@@ -25,6 +25,5 @@ $factory->define(App\Event::class, function (Faker $faker) {
         'reg_fee' => random_int(100, 500),
         'no_of_days' => random_int(1, 10),
         'description' => $faker->paragraph,
-        
     ];
 });

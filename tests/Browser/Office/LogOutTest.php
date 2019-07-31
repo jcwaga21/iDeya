@@ -32,7 +32,6 @@ class LogOutTest extends DuskTestCase
 
 
             $response->clickLink('Log Out')->assertSee('Login');
-
         });
     }
 }
