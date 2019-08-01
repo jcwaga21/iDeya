@@ -34,7 +34,6 @@ class OfficeServiceProvider extends ServiceProvider
             ]);
              $event->menu->add([
                 'text' => 'Attendance',
-                'url' => route('users.listing'),
             ]);
 
         });

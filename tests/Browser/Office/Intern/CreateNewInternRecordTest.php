@@ -3,13 +3,16 @@
 namespace Tests\Browser\Office\Intern;
 
 use App\User;
+use Modules\Office\Entities\Employee;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\Helpers\UserFactoryHelper;
 
 class CreateNewInternRecordTest extends DuskTestCase
 {
     use DatabaseMigrations;
+    use UserFactoryHelper;
     /**
      * A Dusk test example.
      * @test
@@ -19,10 +22,12 @@ class CreateNewInternRecordTest extends DuskTestCase
      */
     public function successfullyRecordedNewIntern()
     {
-        factory(User::class)->create(['email' => 'jc@gmail.com']);
+
         $this->browse(function (Browser $browser) {
+            $email = 'jc@gmail.com';
+            $this->mockAdminUser($email);
             $response = $browser->visit(route('office.login'))
-                ->type('email', 'jc@gmail.com')
+                ->type('email', $email)
                 ->type('password', 'password')
                 ->click('#login');
 
@@ -40,7 +45,7 @@ class CreateNewInternRecordTest extends DuskTestCase
                 'users',
                 [
                     'email' => 'jade@gmail.com',
-                    'type' => 'employee'
+                    'type' => 'internship'
                 ]
             );
         });

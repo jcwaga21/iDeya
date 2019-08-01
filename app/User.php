@@ -45,7 +45,7 @@ class User extends Authenticatable
         switch (strtolower($this->type)) {
             case "employee":
                 return Employee::whereEmail($this->email)->first()->fullName();
-            case "intern":
+            case "internship":
                 return Intern::whereEmail($this->email)->first()->fullName();
         }
     }
@@ -55,7 +55,7 @@ class User extends Authenticatable
         switch (strtolower($this->type)) {
             case "employee":
                 return Employee::whereEmail($this->email)->first()->contact_number;
-            case "intern":
+            case "internship":
                 return Intern::whereEmail($this->email)->first()->contact_number;
         }
 

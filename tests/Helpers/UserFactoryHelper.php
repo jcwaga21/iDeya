@@ -3,11 +3,13 @@
 namespace Tests\Helpers;
 
 use App\User;
+use Modules\Office\Entities\Employee;
 
 trait UserFactoryHelper
 {
-    public function mockAdminUser()
+    public function mockAdminUser(string $email = "admin@example.com")
     {
-        return factory(User::class)->create();
+        $employee = factory(Employee::class)->create(['email' => $email]);
+        return factory(User::class)->create(['email' => $employee->email]);
     }
 }
