@@ -3,14 +3,14 @@
 namespace Modules\Office\Http\Controllers\Intern;
 
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Modules\Office\Entities\Intern;
+use Modules\Office\Http\Requests\AddInternRequest;
 
 class CreateInternController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(AddInternRequest $request)
     {
         $data = $request->except('_token');
         Intern::create($data);
