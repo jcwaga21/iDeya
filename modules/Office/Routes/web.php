@@ -11,7 +11,11 @@ Route::group(['middleware'=> 'auth'], function(){
 
     Route::get('users', 'User\UserListingController')->name('users.listing');
 
-    Route::get('interns', 'Intern\InternListingController')->name('interns.listing');
+    Route::get('interns', 'Intern\InternListingController')->name('intern.listing');
     Route::view('/interns/create', 'office::intern.create')->name('intern.create');
     Route::post('/intern', 'Intern\CreateInternController')->name('intern.store');
+
+    Route::get('coworking', 'CoWorking\CoWorkingListingController')->name('coworking.listing');
+    Route::view('/coworking/create', 'office::coworking.create')->name('coworking.create');
+    Route::post('coworking', 'CoWorking\CreateCoWorkingController')->name('coworking.store');
 });
