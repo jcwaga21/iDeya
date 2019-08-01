@@ -10,7 +10,7 @@
                         <h4>User Listing</h4>
                         <a class="btn btn-primary" id="create-employee" href="{{route('employee.create')}}">Create Employee</a>
                         <a class="btn btn-primary" id="create-intern" href="{{route('intern.create')}}">Create Intern</a>
-                        <a class="btn btn-primary" id="create-coworking" >Create Co-Working</a>
+                        <a class="btn btn-primary" id="create-coworking" href="{{route('coworking.create')}}">Create Co-Working</a>
                     </div>
                     <div class="card-body">
                         <table class="table table table-bordered table-striped .table-responsive">
