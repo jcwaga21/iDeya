@@ -21,9 +21,8 @@ Route::group(['middleware'=> 'auth'], function(){
             Route::get('/create', 'EventListingController@create')->name('adminevent.create');
             Route::post('/', 'EventListingController@store')->name('adminevent.store');
             Route::get('/{event}/detail', 'EventDetailController')->name('adminevent.detail');
-            Route::get('/{event}/speaker/create', 'CreateSpeakerController')->
-                name('adminevent.speaker.add');
-            Route::post('/{event}/speaker', 'AddEventSpeakerController')->name('adminevent.speaker');
+            Route::post('/{event}/create/speaker', 'CreateSpeakerController')->name('adminevent.speaker.add');
+            Route::get('{event}/speaker', 'AddEventSpeakerController')->name('adminevent.speaker');
         });
     });
 });

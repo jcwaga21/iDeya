@@ -27,7 +27,7 @@ Route::group(['middleware' => 'guest'], function() {
 
 
 Route::group(["prefix"=>'events'], function(){
-	Route::group(['namespace' => "Event"], function(){
+	Route::group(['namespace' => 'Event'], function(){
 		Route::get('/{event}/register', "RegistrationPageController")->name('register');
 		Route::post('/{event}/participant',"AddParticipantController")->name('events.participant.add');
 		Route::get('/{event}/seedetails', "SeeDetails")->name('event.seedetails');
@@ -36,15 +36,15 @@ Route::group(["prefix"=>'events'], function(){
 });
 
 // should be grouped with the events above
-Route::group(['middleware' => 'auth'], function() {
-	Route::group(['prefix' => "dashboard", "namespace" => "Dashboard"], function() {
-	    Route::view('/',"dashboard.index")->name('dashboard.index');
-	});
+Route::group(['middleware' => 'auth'], function(){
+    Route::group(['namespace' => 'Dashboard'], function(){
+        Route::view('/dashboard',"dashboard.index")->name('dashboard.index');
+    });
 
-	Route::group(['prefix' => "inventory", "namespace" => "Inventory"], function() {
-	    Route::post('/',"AddChairController")->name('inventory.chair.add');
-	    Route::get('/create',"CreateChairController")->name('inventory.create');
-	});
-	
-	Route::get('/{event}/detail',"ShowDetail")->name('event.details');
+	Route::group(['prefix' => 'inventory'], function(){
+        Route::group(['namespace' => 'Inventory'], function(){
+            Route::post('/',"AddChairController")->name('inventory.chair.add');
+            Route::get('/create',"CreateChairController")->name('inventory.create');
+        });
+    });
 });
