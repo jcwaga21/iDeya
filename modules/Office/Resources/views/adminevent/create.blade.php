@@ -7,6 +7,15 @@
         <div class="col-md-10">
             <div class="col-md-8">
                 <form method="POST" action="{{route('adminevent.store')}}">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                 @csrf
                 <h3>Create a new Event:</h3><br>
                 <div class="form-group">
@@ -56,8 +65,13 @@
                 <div class="form-group">
                     <label for="guestspeaker">Guest Speaker:</label>
                     <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="e.g. Doctor Steven Strange">
-                    <a href="{{route('adminevent.speaker')}}">Add Speaker</a>
                 </div>
+                <!--
+                <div class="form-group">
+                    <label for="guestspeaker">Guest Speaker:</label>
+                    <input name="guestspeaker" class="form-control" id="guestspeaker" type="text" placeholder="e.g. Doctor Steven Strange">
+                </div>
+                -->
                 <div class="form-group">
                     <button id="add_event" type="submit" class="btn btn-primary">Add Event</button>
                 </div>
