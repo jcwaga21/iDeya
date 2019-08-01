@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Modules\Office\Entities\CoWorking;
 use Modules\Office\Entities\Employee;
 use Modules\Office\Entities\Intern;
 
@@ -47,6 +48,9 @@ class User extends Authenticatable
                 return Employee::whereEmail($this->email)->first()->fullName();
             case "internship":
                 return Intern::whereEmail($this->email)->first()->fullName();
+            case "co-worker":
+                return CoWorking::whereEmail($this->email)->first()->fullName();
+
         }
     }
 
@@ -57,6 +61,8 @@ class User extends Authenticatable
                 return Employee::whereEmail($this->email)->first()->contact_number;
             case "internship":
                 return Intern::whereEmail($this->email)->first()->contact_number;
+            case "co-worker":
+                return CoWorking::whereEmail($this->email)->first()->contact_number;
         }
 
     }
