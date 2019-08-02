@@ -4,7 +4,7 @@ namespace Modules\Office\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CoWorking extends Model
+class AdminEventSpeaker extends Model
 {
     protected $guarded = [];
 }
