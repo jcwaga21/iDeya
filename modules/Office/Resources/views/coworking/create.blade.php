@@ -6,18 +6,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="col-md-8">
-                    <form method="POST" action="{{route('intern.store')}}">
+                    <form method="POST" action="{{route('coworking.store')}}">
                         @csrf
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <h3>Create a new Intern:</h3><br>
+                        <h3>Create a new Co-Worker:</h3><br>
                         <div class="form-group">
                             <label for="first_name">First Name:</label>
                             <input name="first_name" class="form-control" id="first_name" type="text" placeholder="e.g. Jane">
@@ -35,7 +26,7 @@
                             <input name="email" class="form-control" id="email" type="text" placeholder="e.g. username@email.com">
                         </div>
                         <div class="form-group">
-                            <button id="add_intern" type="submit" class="btn btn-primary">Add Intern</button>
+                            <button id="add_coworker" type="submit" class="btn btn-primary">Add Co-Worker</button>
                         </div>
                     </form>
                 </div>

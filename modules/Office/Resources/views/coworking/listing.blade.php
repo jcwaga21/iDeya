@@ -7,7 +7,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Employee Listings</h4>
+                        <h4>Co-Working Listings</h4>
                     </div>
                     <div class="card-body">
                         <table class="table table table-bordered table-striped .table-responsive">
@@ -16,16 +16,14 @@
                                 <th>Full Name</th>
                                 <th>Contact Number</th>
                                 <th>Email</th>
-                                <th>Position</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($employees as $employee)
+                            @foreach($coworkings as $coworking)
                                 <tr>
-                                    <td> {{$employee->fullName()}} </td>
-                                    <td> {{$employee->contact_number}} </td>
-                                    <td> {{$employee->email}} </td>
-                                    <td> {{$employee->position}} </td>
+                                    <td> {{$coworking->fullName()}} </td>
+                                    <td> {{$coworking->contact_number}} </td>
+                                    <td> {{$coworking->email}} </td>
                                 </tr>
                             @endforeach
                             </tbody>

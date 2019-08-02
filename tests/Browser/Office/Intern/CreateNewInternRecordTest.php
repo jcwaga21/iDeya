@@ -50,4 +50,39 @@ class CreateNewInternRecordTest extends DuskTestCase
             );
         });
     }
+
+    /**
+     *
+     * @test
+     * @group intern
+     * @group errorMissingEmail
+     * @return void
+     */
+    public function errorMissingEmail()
+    {
+        $this->browse(function (Browser $browser) {
+            $email = 'jc@gmail.com';
+            $this->mockAdminUser($email);
+            $response = $browser->visit(route('office.login'))
+                ->type('email', $email)
+                ->type('password', 'password')
+                ->click('#login');
+
+            $response->clickLink('Users')
+                ->click('#create-intern')
+                ->type('first_name', 'Jade')
+                ->type('last_name', 'Doe')
+                ->type('contact_number', '09123456789')
+                ->click('#add_intern')
+                ->assertSee('The email field is required.');
+
+            $this->assertDatabaseMissing(
+                'users',
+                [
+                    'email' => 'jade@gmail.com',
+                    'type' => 'internship'
+                ]
+            );
+        });
+    }
 }
