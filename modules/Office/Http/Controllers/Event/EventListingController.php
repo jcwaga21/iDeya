@@ -31,10 +31,7 @@ class EventListingController extends Controller
     public function create()
     {
         $eventTypes = EventType::all();
-
-        $eventBudgets = Budget::whereIn("id", EventBudget::where(["event_id" => $event->id])->pluck('budget_id'))->get();
-
-        return view('office::adminevent.create', compact('eventTypes', 'eventBudgets'));
+        return view('office::adminevent.create', compact('eventTypes'));
     }
 
     /**

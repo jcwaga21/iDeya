@@ -33,7 +33,7 @@
                                     <td> <a href="{{route('adminevent.detail', compact('event'))}}">{{$event->title}}</a> </td>
                                     <td> {{$event->eventType->name}} </td>
                                     <td> {{$event->date}} </td>
-                                    <td> {{optional(optional($event->eventBudget)->budget)->first()->amount}} </td>
+                                    <td> {{optional($event->eventBudget)->budget}} </td>
                                     <td> {{$event->eventParticipants->count()}} / {{$event->expected_no}} </td>
                                     <td> {{$event->guestspeaker}} </td>
                                     <td> {{$event->reg_fee}} </td>
