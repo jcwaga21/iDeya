@@ -18,33 +18,21 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Tailwinds -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2da44da5ae.js"></script>
+
 </head>
-<body>
+<body class="bg-gray-200">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                       
-                    </ul>
-                </div>
+        <div class="container-lg mx-auto bg-white shadow-md">
+            <div class="block inline-flex pl-3 py-3">
+                <div class="pl-3"><a href="#"><img src="/images/wewe.png" class="w-12 h-12"></a></div>
+                <div><p class="text-3xl text-red-800 font-bold">iDEYA</p></div>
             </div>
-        </nav>
-
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
