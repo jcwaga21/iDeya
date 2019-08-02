@@ -14,7 +14,10 @@ class EventDetailController extends Controller
 {
     public function __invoke(Event $event)
     {
-        $budgets = Budget::whereIn("id", EventBudget::where(["event_id" => $event->id])->pluck('budget_id'))->get();
+        $budgets = Budget::whereIn(
+            "id",
+            EventBudget::where(["event_id" => $event->id])->pluck('budget_id')
+        )->get();
 
         $participants = Participant::whereIn(
             "id",
