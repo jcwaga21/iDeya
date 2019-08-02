@@ -15,7 +15,19 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::view('/interns/create', 'office::intern.create')->name('intern.create');
     Route::post('/intern', 'Intern\CreateInternController')->name('intern.store');
 
+
     Route::get('coworking', 'CoWorking\CoWorkingListingController')->name('coworking.listing');
     Route::view('/coworking/create', 'office::coworking.create')->name('coworking.create');
     Route::post('coworking', 'CoWorking\CreateCoWorkingController')->name('coworking.store');
+
+    Route::group(['prefix'=>'events'], function(){
+        Route::group(['namespace'=>'Event'], function(){
+            Route::get('/', 'EventListingController@index')->name('adminevent.index');
+            Route::get('/create', 'EventListingController@create')->name('adminevent.create');
+            Route::post('/', 'EventListingController@store')->name('adminevent.store');
+            Route::get('/{event}/detail', 'EventDetailController')->name('adminevent.detail');
+            Route::post('/{event}/create/speaker', 'CreateSpeakerController')->name('adminevent.speaker.add');
+            Route::get('{event}/speaker', 'AddEventSpeakerController')->name('adminevent.speaker');
+        });
+    });
 });

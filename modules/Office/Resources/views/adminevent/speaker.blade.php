@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="col-md-8">
-                <form method="POST" action="{{route('speaker', compact('event'))}}">
+                <form method="POST" action="{{route('adminevent.speaker.add', compact('event'))}}">
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>

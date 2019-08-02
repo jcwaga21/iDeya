@@ -12,6 +12,6 @@ class EventBudget extends Model
 
     public function budget()
     {
-        return $this->belongsTo(Budget::class, 'id', 'budget_id');
+        return $this->belongsTo(Budget::class, 'id');
     }
 }

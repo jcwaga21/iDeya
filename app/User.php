@@ -64,7 +64,5 @@ class User extends Authenticatable
             case "co-worker":
                 return CoWorking::whereEmail($this->email)->first()->contact_number;
         }
-
     }
-
 }
