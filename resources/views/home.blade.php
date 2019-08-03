@@ -87,76 +87,74 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-auto mt-2 w-3/5">
-            <div class="block inline-flex">
-            <div class="w-1/3 bg-white m-2 rounded-lg shadow-md">
-                <div>
-                    <div class="bg-yellow-300 h-32">
-                        
-                    </div>
-                    <div class="p-2">
-                        <p class="text-center font-bold text-xl">Grand Hackathon</p>
-                    </div>
-                    <div class="border border-gray-200"></div>
-                    <div class="p-4">
-                        <div class="block inline-flex mb-4">
-                            <i class="fas fa-calendar-alt text-2xl"></i>
-                            <p class="pl-2 -pt-1">August 13, 2019</p>
-                        </div>
-                        <div class="block inline-flex">
-                            <i class="fas fa-microphone text-2xl"></i>
-                            <p class="pl-2 -pt-1">Mrs. Dominique Baes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="w-1/3 bg-white m-2 rounded-lg shadow-md">
-                <div>
-                    <div class="bg-yellow-300 h-32">
-                        
-                    </div>
-                    <div class="p-2">
-                        <p class="text-center font-bold text-xl">Grand Hackathon</p>
-                    </div>
-                    <div class="border border-gray-200"></div>
-                    <div class="p-4">
-                        <div class="block inline-flex mb-4">
-                            <i class="fas fa-calendar-alt text-2xl"></i>
-                            <p class="pl-2 -pt-1">August 13, 2019</p>
+        <div class="container mx-auto mt-2 w-4/5">
+            <div class="flex mb-4 md:flex-row flex-wrap ml-24">
+                <div class="w-1/4 bg-white rounded-lg shadow-md p-2 m-1">
+                    <div>
+                        <div class="bg-yellow-300 h-32">
+                            
                         </div>
-                        <div class="block inline-flex">
-                            <i class="fas fa-microphone text-2xl"></i>
-                            <p class="pl-2 -pt-1">Mrs. Dominique Baes</p>
+                        <div class="p-2">
+                            <p class="text-center font-bold text-xl">Grand Hackathon</p>
+                        </div>
+                        <div class="border border-gray-200"></div>
+                        <div class="p-4">
+                            <div class="block inline-flex mb-4">
+                                <i class="fas fa-calendar-alt text-2xl"></i>
+                                <p class="pl-2 -pt-1">August 13, 2019</p>
+                            </div>
+                            <div class="block inline-flex">
+                                <i class="fas fa-microphone text-2xl"></i>
+                                <p class="pl-2 -pt-1">Mrs. Dominique Baes</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                 </div>
 
-            <div class="w-1/3 bg-white m-2 rounded-lg shadow-md">
-                <div>
-                    <div class="bg-yellow-300 h-32 shadow-md" style="background-image: url('assets/startup2.png'); " >
-                        
-                    </div>
-                    <div class="p-2">
-                        <p class="text-center font-bold text-xl text-red-800">Startup Challenge</p>
-                    </div>
-                    <div class="border border-gray-200"></div>
-                    <div class="p-4">
-                        <div class="block inline-flex mb-4 mr-4">
-                            <div><i class="fas fa-calendar-alt text-2xl text-gray-700"></i></div>
-                            <p class="pl-2 -pt-1 font-medium">August 13, 2019</p>
+                 <div class="w-1/4 bg-white rounded-lg shadow-md p-2 m-1">
+                    <div>
+                        <div class="bg-yellow-300 h-32">
+                            
                         </div>
-                        <div class="block inline-flex mb-4">
-                            <div><i class="fas fa-clock text-2xl text-gray-700"></i></div>
-                            <p class="pl-2 -pt-1 font-medium">10:00 AM - 5:00 PM</p>
+                        <div class="p-2">
+                            <p class="text-center font-bold text-xl">Grand Hackathon</p>
                         </div>
-                        <div class="block inline-flex">
-                            <div><i class="fas fa-microphone text-2xl text-gray-700"></i></div>
-                            <p class="pl-2 -pt-1 font-medium">Mrs. Dominique Justine B. Black</p>
+                        <div class="border border-gray-200"></div>
+                        <div class="p-4">
+                            <div class="block inline-flex mb-4">
+                                <i class="fas fa-calendar-alt text-2xl"></i>
+                                <p class="pl-2 -pt-1">August 13, 2019</p>
+                            </div>
+                            <div class="block inline-flex">
+                                <i class="fas fa-microphone text-2xl"></i>
+                                <p class="pl-2 -pt-1">Mrs. Dominique Baes</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                 </div>
+
+                 <div class="w-1/4 bg-white rounded-lg shadow-md p-2 m-1">
+                    <div>
+                        <div class="bg-yellow-300 h-32">
+                            
+                        </div>
+                        <div class="p-2">
+                            <p class="text-center font-bold text-xl">Grand Hackathon</p>
+                        </div>
+                        <div class="border border-gray-200"></div>
+                        <div class="p-4">
+                            <div class="block inline-flex mb-4">
+                                <i class="fas fa-calendar-alt text-2xl"></i>
+                                <p class="pl-2 -pt-1">August 13, 2019</p>
+                            </div>
+                            <div class="block inline-flex">
+                                <i class="fas fa-microphone text-2xl"></i>
+                                <p class="pl-2 -pt-1">Mrs. Dominique Baes</p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
             </div>
         </div>
     </div>
