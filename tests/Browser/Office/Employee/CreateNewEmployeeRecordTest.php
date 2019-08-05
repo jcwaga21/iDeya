@@ -121,4 +121,81 @@ class CreateNewEmployeeRecordTest extends DuskTestCase
     }
 
     // unableToCreateEmployeeRecordWhenEmailIsMissing
+    /**
+     * A Dusk test example.
+     *
+     * @return void
+     * @test
+     * @group employee
+     * @group employeeErrorMissingEmail
+     *
+     */
+    public function employeeErrorMissingEmail()
+    {
+        $this->browse(function (Browser $browser) {
+            $email = 'jc@gmail.com';
+            $this->mockAdminUser($email);
+            $response = $browser->visit(route('office.login'))
+                ->type('email', 'jc@gmail.com')
+                ->type('password', 'password')
+                ->click('#login');
+
+
+            $response->clickLink('Users')
+                ->click('#create-employee')
+                ->type('first_name', 'Jade')
+                ->type('last_name', 'Doe')
+                ->type('contact_number', '09123456789')
+                ->type('position', 'staff')
+                ->click('#add_employee')
+                ->assertSee('The email field is required.');
+
+            $this->assertDatabaseMissing(
+                'users',
+                [
+                    'email' => 'jade@gmail.com',
+                    'type' => 'employee'
+                ]
+            );
+        });
+    }
+
+    /**
+     * A Dusk test example.
+     *
+     * @return void
+     * @test
+     * @group employee
+     * @group employeeErrorFirstnameAndLastname
+     *
+     */
+    public function employeeErrorFirstnameAndLastname()
+    {
+        $this->browse(function (Browser $browser) {
+            $email = 'jc@gmail.com';
+            $this->mockAdminUser($email);
+            $response = $browser->visit(route('office.login'))
+                ->type('email', 'jc@gmail.com')
+                ->type('password', 'password')
+                ->click('#login');
+
+
+            $response->clickLink('Users')
+                ->click('#create-employee')
+                ->type('contact_number', '09123456789')
+                ->type('position', 'staff')
+                ->type('email', 'jade@gmail.com')
+                ->click('#add_employee')
+                ->assertSee('The first name field is required.')
+                ->assertSee('The last name field is required.');
+
+            $this->assertDatabaseMissing(
+                'users',
+                [
+                    'email' => 'jade@gmail.com',
+                    'type' => 'employee'
+                ]
+            );
+        });
+    }
 }

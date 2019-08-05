@@ -3,14 +3,15 @@
 namespace Modules\Office\Http\Controllers\CoWorking;
 
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Modules\Office\Entities\CoWorking;
+use Modules\Office\Http\Requests\AddCoWorkingRequest;
+
 
 class CreateCoWorkingController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(AddCoWorkingRequest $request)
     {
         $data = $request->except('_token');
         CoWorking::create($data);
