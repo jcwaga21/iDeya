@@ -1,12 +1,12 @@
 <?php
 
+use App\User;
 use App\Event;
 use App\Budget;
 use App\Participant;
 use App\EventBudget;
 use App\EventParticipant;
 use Illuminate\Database\Seeder;
-use App\User;
 use Modules\Office\Entities\Employee;
 
 class DatabaseSeeder extends Seeder
