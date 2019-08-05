@@ -5,21 +5,33 @@ Route::post('login', "LoginController")->name('office.login.submit');
 
 Route::group(['middleware'=> 'auth'], function(){
     Route::post('logout','\App\Http\Controllers\Auth\LoginController@logout')->name('office.logout');
-    Route::view('employees/create', 'office::employee.create')->name('employee.create');
-    Route::post('employees', 'Employee\CreateEmployeeController')->name('employee.store');
-    Route::get('employees', 'Employee\EmployeeListingController')->name('employee.listing');
-
     Route::get('users', 'User\UserListingController')->name('users.listing');
 
-    Route::get('interns', 'Intern\InternListingController')->name('intern.listing');
-    Route::view('/interns/create', 'office::intern.create')->name('intern.create');
-    Route::post('/intern', 'Intern\CreateInternController')->name('intern.store');
+    Route::group(['prefix'=>'employees'], function(){
+        Route::group(['namespace'=>"Employee"], function(){
+            Route::view('/create', 'office::employee.create')->name('employee.create');   
+            Route::post('/', 'CreateEmployeeController')->name('employee.store');
+            Route::get('/', 'EmployeeListingController')->name('employee.listing');      
+        });
+    });
 
-
-    Route::get('coworking', 'CoWorking\CoWorkingListingController')->name('coworking.listing');
-    Route::view('/coworking/create', 'office::coworking.create')->name('coworking.create');
-    Route::post('coworking', 'CoWorking\CreateCoWorkingController')->name('coworking.store');
-
+    Route::group(['prefix'=>'interns'], function(){
+        Route::group(['namespace'=>"Intern"], function(){
+            Route::get('/', 'InternListingController')->name('intern.listing');
+            Route::view('/create', 'office::intern.create')->name('intern.create');
+            Route::post('/', 'CreateInternController')->name('intern.store');
+        
+        });
+    });
+    
+    Route::group(['prefix'=>'coworking'], function(){
+        Route::group(['namespace'=>'CoWorking'], function(){
+            Route::get('/', 'CoWorkingListingController')->name('coworking.listing');
+            Route::view('/create', 'office::coworking.create')->name('coworking.create');
+            Route::post('/', 'CreateCoWorkingController')->name('coworking.store');
+        });
+    });
+    
     Route::group(['prefix'=>'events'], function(){
         Route::group(['namespace'=>'Event'], function(){
             Route::get('/', 'EventListingController@index')->name('adminevent.index');
