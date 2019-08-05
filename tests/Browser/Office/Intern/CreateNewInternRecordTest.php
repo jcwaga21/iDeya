@@ -85,4 +85,39 @@ class CreateNewInternRecordTest extends DuskTestCase
             );
         });
     }
+
+    /**
+     *
+     * @test
+     * @group intern
+     * @group errorMissingFirstnameAndLastname
+     * @return void
+     */
+    public function errorMissingFirstnameAndLastname()
+    {
+        $this->browse(function (Browser $browser) {
+            $email = 'jc@gmail.com';
+            $this->mockAdminUser($email);
+            $response = $browser->visit(route('office.login'))
+                ->type('email', $email)
+                ->type('password', 'password')
+                ->click('#login');
+
+            $response->clickLink('Users')
+                ->click('#create-intern')
+                ->type('email', 'jade@gmail.com')
+                ->type('contact_number', '09123456789')
+                ->click('#add_intern')
+                ->assertSee('The first name field is required.')
+                ->assertSee('The last name field is required.');
+
+            $this->assertDatabaseMissing(
+                'users',
+                [
+                    'email' => 'jade@gmail.com',
+                    'type' => 'internship'
+                ]
+            );
+        });
+    }
 }
