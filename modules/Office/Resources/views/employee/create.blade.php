@@ -8,6 +8,15 @@
                 <div class="col-md-8">
                     <form method="POST" action="{{route('employee.store')}}">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <h3>Create a new Employee:</h3><br>
                         <div class="form-group">
                             <label for="first_name">First Name:</label>
