@@ -16,7 +16,7 @@ class CreateEventTest extends DuskTestCase
 
     /**
      * A Dusk test example.
-     *
+     *@group CreateEvent
      * @test
      */
     public function testSuccessfulCreatedEvent()
@@ -27,11 +27,11 @@ class CreateEventTest extends DuskTestCase
 
             factory(EventType::class)->create(['name' => 'domskie']);
 
-            $browser->loginAs($this->mockAdminUser())->visit(route('events.create'))
+            $browser->loginAs($this->mockAdminUser())->visit(route('adminevent.create'))
 
                     ->type('title', 'Hackathon')
                     ->select('type_id', '1')
-                    ->type('date', Carbon::now()->toString())
+                    ->type('date', '2019-08-14')
                     ->type('expected_no', '20')
                     ->type('guestspeaker', 'Doctor Strange')
                     ->type('eventbudget', '2000')
@@ -39,7 +39,7 @@ class CreateEventTest extends DuskTestCase
                     ->select('no_of_days', '2')
                     ->click('#add_event')
 
-                    ->assertUrlIs(route('events.index'))
+                    ->assertUrlIs(route('adminevent.index'))
                     ->assertSee('domskie');
         });
     }
