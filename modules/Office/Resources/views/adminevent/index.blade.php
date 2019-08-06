@@ -1,31 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="text-gray-900 bg-gray-200">
+<div class="text-gray-900 bg-gray-200 container mx-auto mt-16">
     <div class="p-4 flex">
         <h1 class="text-3xl">
             Event Listings
         </h1>
-        <a href="{{route('adminevent.create')}}" role="button">
-            <button class="bg-red-700 hover:bg-red-800 text-white font-bold px-4 py-2 border border-red-700 rounded ml-2">Create Event</button>
+        <a href="{{route('adminevent.create')}}" role="button" class="bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2  border rounded-full ml-2" id="create-event">
+            Create Event
         </a>
+
     </div>
     <div class="px-3 py-4 justify-center">
         <table class="w-full text-md bg-white shadow-md rounded mb-4">
             <tbody>
-                <tr class="border-b">
+                <tr class="border-b text-center">
+                    <th class="text-left p-3 px-5"></th>
                     <th class="text-left p-3 px-5">Event Title</th>
                     <th class="text-left p-3 px-5">Event Type</th>
                     <th class="text-left p-3 px-5">Date</th>
                     <th class="text-left p-3 px-5">Event Budget</th>
-                    <th class="text-left p-3 px-5">Number of Participants</th>
+                    <th class="text-left p-3 px-5">No. of Participants</th>
                     <th class="text-left p-3 px-5">Guest Speaker</th>
-                    <th class="text-left p-3 px-5">Registration Fee</th>
-                    <th class="text-left p-3 px-5">Number of Days</th>
+                    <th class="text-left p-3 px-5">Reg. Fee</th>
+                    <th class="text-left p-3 px-5">No. of Days</th>
                     <th class="text-left p-3 px-5">Status</th>
                 </tr>
+                <?php  $i=1;?>
                 @foreach($events as $event)
                 <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                    <td class="p-3 px-5">{{$i++}}</td>
                     <td class="p-3 px-5"><a href="{{route('adminevent.detail', compact('event'))}}">{{$event->title}}</a></td>
                     <td class="p-3 px-5">{{$event->eventType->name}}</td>
                     <td class="p-3 px-5">{{$event->date}}</td>
@@ -34,7 +38,7 @@
                     <td class="p-3 px-5">{{$event->guestspeaker}}</td>
                     <td class="p-3 px-5">{{$event->reg_fee}}</td>
                     <td class="p-3 px-5">{{$event->no_of_days}}</td>
-                    <td class="p-3 px-5">{{$event->status}}</td>
+                    <td class="p-3 px-5"><div class="bg-yellow-500  text-white text-sm px-3 py-1  rounded-full ml-2">{{$event->status}}</div></td>
                 </tr>
                 @endforeach
             </tbody>
