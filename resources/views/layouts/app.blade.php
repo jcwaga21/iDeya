@@ -26,13 +26,18 @@
 
 </head>
 <body class="bg-gray-200">
-    <div id="app">
-        <div class="container-lg mx-auto bg-white shadow-md">
-            <div class="block inline-flex pl-3 py-3">
-                <div class="pl-3"><a href="#"><img src="/images/wewe.png" class="w-12 h-12"></a></div>
-                <div><p class="text-3xl text-red-800 font-bold">iDEYA</p></div>
+    <div class="app">
+        <nav class="flex items-center justify-between flex-wrap bg-white p-4 w-full">
+          <div class="pl-2"><a href="/"><img src="/images/wewe.png" class="w-10 h-10"></a></div>
+            <div class="ml-2"><p class="text-2xl text-red-800 font-bold">iDEYA</p></div>
+          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-sm lg:flex-grow">
             </div>
-        </div>
+            <div class="mr-4">
+              <a href="{{route('registration')}}" class="inline-block text-sm font-medium px-6 py-2 leading-none border rounded-full text-red-600 border-red-600 hover:border-transparent hover:text-white hover:bg-red-600 mt-4 lg:mt-0">Guest</a>
+            </div>
+          </div>
+        </nav>
         <main class="py-4">
             @yield('content')
         </main>
