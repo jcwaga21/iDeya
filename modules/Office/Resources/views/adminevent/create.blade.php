@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <!-- 
@@ -76,7 +76,7 @@
     </div>
 </div>
  -->
- <div>
+ <div class="mt-20">
     <form class="w-full max-w-lg bg-white p-4 container mx-auto mt-8" method="POST" action="{{route('adminevent.store')}}">
                             @if ($errors->any())
                                  <div class="alert alert-danger">
