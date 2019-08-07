@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
+    <div class="mt-20">
     <form class="w-full max-w-lg bg-white p-4 container mx-auto mt-8" method="POST" action="{{route('guest.attendance')}}">
                             @if ($errors->any())
                                  <div class="alert alert-danger">
