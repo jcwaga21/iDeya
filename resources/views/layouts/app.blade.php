@@ -23,11 +23,12 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/2da44da5ae.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
 
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-200" style="font-family: 'Source Sans Pro', sans-serif;">
     <div class="app">
-        <nav class="flex items-center justify-between flex-wrap bg-white p-4 w-full">
+        <nav class="flex items-center justify-between flex-wrap bg-white p-4 w-full fixed z-40">
           <div class="pl-2"><a href="/"><img src="/images/wewe.png" class="w-10 h-10"></a></div>
             <div class="ml-2"><p class="text-2xl text-red-800 font-bold">iDEYA</p></div>
           <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
