@@ -39,8 +39,11 @@
                 </a>
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-red-600 mr-4 font-medium"><i class="fas fa-clipboard pr-1"></i>Attendance
                 </a>
-                <a href="{{route('adminevent.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-red-600 font-medium"><i class="fas fa-calendar-week"></i>
+                <a href="{{route('adminevent.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-red-600 font-medium mr-4"><i class="fas fa-calendar-week"></i>
                     Events
+                </a>
+
+                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-red-600 mr-4 font-medium"><i class="fas fa-inbox pr-1"></i></i>Inventory
                 </a>
             </div>
             <div class="mr-4">
