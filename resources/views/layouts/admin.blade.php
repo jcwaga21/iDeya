@@ -16,6 +16,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
     <!-- Styles -->
    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 
@@ -25,7 +27,7 @@
     <script src="https://kit.fontawesome.com/2da44da5ae.js"></script>
 
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-200" style="font-family: 'Source Sans Pro', sans-serif;">
     <div id="app">
         <nav class="flex items-center justify-between flex-wrap bg-white p-4 w-full fixed shadow-md">
           <div class="pl-2"><a href="{{route('dashboard.index')}}"><img src="/images/wewe.png" class="w-10 h-10"></a></div>
