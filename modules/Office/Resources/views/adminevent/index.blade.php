@@ -30,7 +30,7 @@
                 @foreach($events as $event)
                 <tr class="border-b hover:bg-orange-100 bg-gray-100">
                     <td class="p-3 px-5">{{$i++}}</td>
-                    <td class="p-3 px-5"><a href="{{route('adminevent.detail', compact('event'))}}">{{$event->title}}</a></td>
+                    <td class="p-3 px-5"><a href="{{route('adminevent.detail', compact('event'))}}" class="hover:underline">{{$event->title}}</a></td>
                     <td class="p-3 px-5">{{$event->eventType->name}}</td>
                     <td class="p-3 px-5">{{$event->date}}</td>
                     <td class="p-3 px-5"> {{optional(optional($event->eventBudget)->budget)->total_amount}}</td>
@@ -38,7 +38,7 @@
                     <td class="p-3 px-5">{{$event->guestspeaker}}</td>
                     <td class="p-3 px-5">{{$event->reg_fee}}</td>
                     <td class="p-3 px-5">{{$event->no_of_days}}</td>
-                    <td class="p-3 px-5"><div class="bg-yellow-500  text-white text-sm px-3 py-1  rounded-full ml-2">{{$event->status}}</div></td>
+                    <td class="p-3 px-5"><div class="bg-yellow-500  text-white text-sm px-2 py-1  rounded-full ml-2 text-center">{{$event->status}}</div></td>
                 </tr>
                 @endforeach
             </tbody>

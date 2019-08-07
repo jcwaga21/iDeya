@@ -83,9 +83,11 @@
     <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         
         <!--Left Col-->
+        @unless(!$ongoingEvent)
         <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-            <h1 class="my-4 text-3xl md:text-5xl text-red-700 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">Para sa Mindanao: GrandHackathon</h1>
-            <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Sub-hero message, not too long and not too short. Make it just right!</p>
+            <h1 class="my-4 text-3xl md:text-5xl text-gray-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">{{$ongoingEvent->title}}</h1>
+            <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">{{$ongoingEvent->description}}</p>
+            <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">{{$ongoingEvent->date}}</p>
         
             <p class="text-gray-800 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Interested?</p>
             <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
@@ -96,6 +98,7 @@
             </div>
 
         </div>
+        @endunless
         
         <!--Right Col-->
         <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
@@ -115,6 +118,7 @@
         </div>
         <div class="flex flex-wrap -mx-1 lg:-mx-4">
             <!-- Column -->
+        @foreach($upcomingEvents as $event)
         <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
             <!-- Article -->
@@ -181,150 +185,9 @@
             <!-- END Article -->
 
         </div>
-        <!-- END Column -->
+        @endforeach
 
 
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-            <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg">
-
-                 <div class="min-w-32 bg-white min-h-48 p-3 mb-4 font-medium">
-                <div class="w-32 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center mx-auto">
-                  <div class="block rounded-t overflow-hidden  text-center">
-                    <div class="bg-red-700 text-white py-1">
-                      March
-                    </div>
-                    <div class="pt-1 border-l border-r border-white bg-white">
-                      <span class="text-5xl font-bold leading-tight">
-                        17
-                      </span>
-                    </div>
-                    <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
-                      <span class="text-sm">
-                        Sunday
-                      </span>
-                    </div>
-                    <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white">
-                      <span class="text-xs leading-normal">
-                        8:00 am to 5:00 pm
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                    <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-black" href="#">
-                            Startup Challenge 3.0
-                        </a>
-                    </h1>
-                    <p class="text-grey-darker text-sm">
-                        14/4/19
-                    </p>
-                </header>
-
-                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                    <a class="flex items-center no-underline hover:underline text-black" href="#">
-                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
-                        <p class="ml-2 text-sm">
-                            Speaker
-                        </p>
-                    </a>
-                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="hidden">Like</span>
-                        <i class="fa fa-heart"></i>
-                    </a>
-                </footer>
-                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                    <a class="flex items-center no-underline hover:underline text-black" href="#">
-                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
-                        <p class="ml-2 text-sm">
-                            Status
-                        </p>
-                    </a>
-                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="hidden">Like</span>
-                        <i class="fa fa-heart"></i>
-                    </a>
-                </footer>
-
-            </article>
-            <!-- END Article -->
-
-        </div>
-        <!-- END Column -->
-
-                <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-
-            <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg">
-
-                 <div class="min-w-32 bg-white min-h-48 p-3 mb-4 font-medium">
-                <div class="w-32 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center mx-auto">
-                  <div class="block rounded-t overflow-hidden  text-center">
-                    <div class="bg-red-700 text-white py-1">
-                      March
-                    </div>
-                    <div class="pt-1 border-l border-r border-white bg-white">
-                      <span class="text-5xl font-bold leading-tight">
-                        17
-                      </span>
-                    </div>
-                    <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
-                      <span class="text-sm">
-                        Sunday
-                      </span>
-                    </div>
-                    <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white">
-                      <span class="text-xs leading-normal">
-                        8:00 am to 5:00 pm
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div> 
-                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-                    <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-black" href="#">
-                            Startup Challenge 3.0
-                        </a>
-                    </h1>
-                    <p class="text-grey-darker text-sm">
-                        14/4/19
-                    </p>
-                </header>
-
-                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                    <a class="flex items-center no-underline hover:underline text-black" href="#">
-                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
-                        <p class="ml-2 text-sm">
-                            Speaker
-                        </p>
-                    </a>
-                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="hidden">Like</span>
-                        <i class="fa fa-heart"></i>
-                    </a>
-                </footer>
-                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                    <a class="flex items-center no-underline hover:underline text-black" href="#">
-                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
-                        <p class="ml-2 text-sm">
-                            Status
-                        </p>
-                    </a>
-                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="hidden">Like</span>
-                        <i class="fa fa-heart"></i>
-                    </a>
-                </footer>
-
-            </article>
-            <!-- END Article -->
-
-        </div>
-        <!-- END Column -->
         </div>
 
 @endsection
