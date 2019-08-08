@@ -1,48 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-<!-- 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>User Listing</h4>
-                        <a class="btn btn-primary" id="create-employee" href="{{route('employee.create')}}">Create Employee</a>
-                        <a class="btn btn-primary" id="create-intern" href="{{route('intern.create')}}">Create Intern</a>
-                        <a class="btn btn-primary" id="create-coworking" href="{{route('coworking.create')}}">Create Co-Working</a>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table table-bordered table-striped .table-responsive">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th>Full Name</th>
-                                <th>Contact Number</th>
-                                <th>Email</th>
-                                <th>Type</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($users as $user)
-                                <tr>
-                                    <td> {{$user->fullName()}} </td>
-                                    <td> {{$user->contactNumber()}} </td>
-                                    <td> {{$user->email}} </td>
-                                    <td> {{$user->type}} </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <div class="text-gray-900 bg-gray-200 container mx-auto mt-16">
     <div class="p-4 flex">
         <h1 class="text-3xl">
-            Event Listings
+            User Listings
         </h1>
         <a href="{{route('employee.create')}}" role="button" class="bg-red-600 hover:bg-red-700 text-white text-sm px-3 py-2  border rounded-full ml-2" id="create-employee">
             Create Employee

@@ -22,11 +22,11 @@
 
 					<div class="mb-2 flex justify-between">
 						<span class="text-sm font-semibold">Reg Fee:</span>
-						<span class="text-sm text-right">{{$event->reg_fee}}</span>
+						<span class="text-sm text-right"><span>&#8369;</span> {{$event->reg_fee}}</span>
 					</div>
 
 					<div class="mb-2 flex justify-between">
-						<span class="text-sm font-semibold">No. of Days:</span>
+						<span class="text-sm font-semibold">No. of Day/s:</span>
 						<span class="text-right text-sm">{{$event->no_of_days}}</span>
 					</div>
 
@@ -51,7 +51,7 @@
 						<span class="text-base font-semibold uppercase text-red-700">Budget Breakdown</span>
 					</div>
 					<div class="mb-4 text-center">
-						<h1 class="text-xl">{{$budgets->sum('total_amount')}}</</h1>
+						<h1 class="text-xl"><span>&#8369;</span> {{$budgets->sum('total_amount')}}</</h1>
 					</div>
 					<div class="">
 						<table class="text-sm w-full bg-white">
@@ -67,11 +67,14 @@
 								<td class="text-left py-2">{{$budget->item}}</td>
 								<td class="text-left py-2">{{$budget->no_of_items}}</td>
 								<td class="text-left py-2">{{$budget->amount}}</td>
-								<td class="text-left py-2">{{$budget->total_amount}}</td>
+								<td class="text-left py-2"><span>&#8369;</span> {{$budget->total_amount}}</td>
 							</tr>
 							@endforeach
-							<th class="text-left">Total</th>
 						</table>
+						<div class="mb-2 flex justify-between mr-2">
+							<span class="text-sm font-semibold">Total</span>
+							<span class="text-sm text-right"><span>&#8369;</span> {{$budgets->sum('total_amount')}}</span>
+						</div>
 					</div>
 				</div>			
 			</div>
