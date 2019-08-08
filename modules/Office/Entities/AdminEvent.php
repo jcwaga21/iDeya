@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\EventParticipant;
 use App\EventBudget;
 use App\EventType;
+use App\Budget;
 
 class AdminEvent extends Model
 {

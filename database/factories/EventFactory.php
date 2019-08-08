@@ -21,7 +21,7 @@ $factory->define(App\Event::class, function (Faker $faker) {
         'actual_no' => random_int(10, 50),
         'guestspeaker' => $faker->name,
         'eventbudget' => random_int(1000, 5000),
-        'status' => 'done',
+        'status' => 'upcoming',
         'reg_fee' => random_int(100, 500),
         'no_of_days' => random_int(1, 10),
         'description' => $faker->paragraph,
