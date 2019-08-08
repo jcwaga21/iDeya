@@ -16,7 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         $ongoingEvent = Event::where(['status' => "on-going"])->latest()->first();
-        $upcomingEvents = Event::where(['status' => "upcoming"])->latest()->get();
+        $upcomingEvents = Event::where(['status' => "upcoming"])->latest()->limit(3)->get();
+ 
         return view('home', compact("ongoingEvent", "upcomingEvents"));
     }
 }
