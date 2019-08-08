@@ -36,6 +36,19 @@
             </div>
         </div>
     </div>
+       <div class="w-full md:w-1/2 xl:w-1/3 pt-3 px-3 md:pr-2 xl:pl-2 xl:pr-3">
+        <div class="bg-red-600 border rounded shadow p-2 h-48">
+            <div class="flex flex-row items-center">
+                <div class="flex-shrink pl-1 pr-4"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
+                <div class="flex-1 text-right">
+                    <h5 class="text-white">Events</h5>
+                    <h3 class="text-white text-3xl">3 Pending</h3>
+                    <h3 class="text-white text-3xl">7 Ongoing</h3>
+                    <h3 class="text-white text-3xl">2 Upcoming</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 		<div class="bg-white p-4">
 			<h1 class="text-6xl font-semibold text-center">Upcoming Events</h1>

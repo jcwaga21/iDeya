@@ -26,6 +26,10 @@
 
     <script src="https://kit.fontawesome.com/2da44da5ae.js"></script>
 
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
 </head>
 <body class="bg-gray-200" style="font-family: 'Source Sans Pro', sans-serif;">
     <div id="app">
