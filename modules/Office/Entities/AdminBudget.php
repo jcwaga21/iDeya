@@ -4,12 +4,12 @@ namespace Modules\Office\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminEventSpeaker extends Model
+class AdminBudget extends Model
 {
     protected $guarded = [];
 
-    public function fullName()
+    public function getTotalAmountAttribute()
     {
-        return $this->first_name . ' ' . $this->last_name;
+        return $this->no_of_items * $this->amount;
     }
 }

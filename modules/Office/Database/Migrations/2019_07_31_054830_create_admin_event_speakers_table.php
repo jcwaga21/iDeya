@@ -22,6 +22,7 @@ class CreateAdminEventSpeakersTable extends Migration
             $table->string('profession')->nullable();
             $table->string('organization')->nullable();
             $table->string('contact');
+            $table->string('description');
             $table->timestamps();
         });
     }

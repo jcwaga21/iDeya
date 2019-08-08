@@ -4,12 +4,12 @@ namespace Modules\Office\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminEventSpeaker extends Model
+class AdminEventBudget extends Model
 {
     protected $guarded = [];
 
-    public function fullName()
+    public function budget()
     {
-        return $this->first_name . ' ' . $this->last_name;
+        return $this->belongsTo(Budget::class, 'id');
     }
 }
