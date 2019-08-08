@@ -25,10 +25,12 @@
     <script src="https://kit.fontawesome.com/2da44da5ae.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
 
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body class="bg-gray-200" style="font-family: 'Source Sans Pro', sans-serif;">
     <div class="app">
-        <nav class="flex items-center justify-between flex-wrap bg-white p-4 w-full fixed z-40">
+        <nav class="flex items-center justify-between flex-wrap bg-white p-4 w-full fixed z-40 shadow-md">
           <div class="pl-2"><a href="/"><img src="/images/wewe.png" class="w-10 h-10"></a></div>
             <div class="ml-2"><p class="text-2xl text-red-800 font-bold">iDEYA</p></div>
           <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">

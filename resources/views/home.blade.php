@@ -150,37 +150,40 @@
               </div> 
                 <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-black" href="#">
-                            Startup Challenge 3.0
+                        <a class="no-underline hover:underline text-black font-semibold" href="#">
+                            {{$event->title}}
                         </a>
                     </h1>
-                    <p class="text-grey-darker text-sm">
-                        14/4/19
-                    </p>
-                </header>
+                    </header>
 
                 <footer class="flex items-center justify-between leading-none p-2 md:p-4">
                     <a class="flex items-center no-underline hover:underline text-black" href="#">
                         <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
                         <p class="ml-2 text-sm">
-                            Speaker
+                            Type
                         </p>
                     <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="text-sm">Jc Waga</span>
+                        <span class="text-sm">{{$event->eventType->name}}</span>
                     </a>
                 </footer>
                 <footer class="flex items-center justify-between leading-none p-2 md:p-4">
                     <a class="flex items-center no-underline hover:underline text-black" href="#">
                         <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
                         <p class="ml-2 text-sm">
-                            Status
+                            Date
                         </p>
                     </a>
                     <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span class="text-sm text-red-500">Unapproved</span>
+                        <span class="text-sm">{{$event->date}}</span>
                     </a>
                 </footer>
+                <div class="p-4 text-justify">
+                    <p>{{$event->description}}</p>
 
+                </div>
+                <div class="text-center pb-4">
+                    <a href="{{route('event.seedetails', compact('event'))}}" class="text-blue-400 hover:underline">See Details</a>
+                </div>
             </article>
             <!-- END Article -->
 

@@ -23,7 +23,7 @@
                     <th class="text-left p-3 px-5">No. of Participants</th>
                     <th class="text-left p-3 px-5">Guest Speaker</th>
                     <th class="text-left p-3 px-5">Reg. Fee</th>
-                    <th class="text-left p-3 px-5">No. of Days</th>
+                    <th class="text-left p-3 px-5">No. of Day/s</th>
                     <th class="text-left p-3 px-5">Status</th>
                 </tr>
                 <?php  $i=1;?>
@@ -38,7 +38,7 @@
                     <td class="p-3 px-5">{{$event->guestspeaker}}</td>
                     <td class="p-3 px-5">{{$event->reg_fee}}</td>
                     <td class="p-3 px-5">{{$event->no_of_days}}</td>
-                    <td class="p-3 px-5"><div class="bg-yellow-500  text-white text-sm px-2 py-1  rounded-full ml-2 text-center">{{$event->status}}</div></td>
+                    <td class="p-3 px-5"><div class="bg-yellow-500  text-white text-sm px-2 py-1  rounded-full ml-2 text-center ">{{$event->status}}</div></td>
                 </tr>
                 @endforeach
             </tbody>
