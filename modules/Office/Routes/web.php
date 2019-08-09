@@ -31,6 +31,12 @@ Route::group(['middleware'=> 'auth'], function(){
             Route::post('/', 'CreateCoWorkingController')->name('coworking.store');
         });
     });
+
+    Route::group(['prefix'=>'attendance'], function(){
+        Route::group(['namespace'=> 'Attendance'],function(){
+            Route::get('/', 'AttendanceListingController')->name('attendance.listing');
+        });
+    });
     
     Route::group(['prefix'=>'events'], function(){
         Route::group(['namespace'=>'Event'], function(){
