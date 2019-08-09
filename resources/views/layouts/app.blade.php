@@ -27,6 +27,7 @@
 
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 </head>
 <body class="bg-gray-200" style="font-family: 'Source Sans Pro', sans-serif;">
     <div class="app">
@@ -46,4 +47,5 @@
         </main>
     </div>
 </body>
+
 </html>
