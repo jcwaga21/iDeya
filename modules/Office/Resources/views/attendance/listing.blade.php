@@ -131,6 +131,38 @@
     </div>
     </section>
 
+    <section>
+    <?php $i = 1;  ?>
+    <div class="px-3 py-4 justify-center">
+        <h1>Participant</h1>
+        <table class="w-full text-md bg-white shadow-md rounded mb-4">
+            <tbody>
+                <tr class="border-b">
+                    <th class="text-left p-3 px-5"></th>
+                    <th class="text-left p-3 px-5">Time - In</th>
+                    <th class="text-left p-3 px-5">Full Name</th>
+                    <th class="text-left p-3 px-5">Contact Number</th>
+                    <th class="text-left p-3 px-5">Email</th>
+                    <th class="text-left p-3 px-5">First Timer</th>
+
+                </tr>
+                @foreach($participantAttendance as $participant)
+                <tr class="border-b hover:bg-orange-100 bg-gray-100">
+                    <td class="p-3 px-5">{{$i++}}</td>
+                    <td class="p-3 px-5">{{$participant->created_at}}</td>
+                    <td class="p-3 px-5">{{$participant->fullName()}}</td>
+                    <td class="p-3 px-5">{{$participant->contact_number}}</td>
+                    <td class="p-3 px-5">{{$participant->email}}</td>
+                    <td class="p-3 px-5">{{$participant->is_firsttime}}</td>
+                   
+
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    </section>
+
 
 </div>
 @endsection
