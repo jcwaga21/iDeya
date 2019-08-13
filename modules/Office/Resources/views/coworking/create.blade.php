@@ -45,7 +45,7 @@
 
 
     <div class="mt-20">
-    <form class="w-full max-w-lg bg-white p-4 container mx-auto mt-8" method="POST" action="{{route('intern.store')}}">
+    <form class="w-full max-w-lg bg-white p-4 container mx-auto mt-8" method="POST" action="{{route('coworking.store')}}">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
