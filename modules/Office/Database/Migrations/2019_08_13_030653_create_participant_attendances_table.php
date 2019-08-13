@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoWorkingAttendancesTable extends Migration
+class CreateParticipantAttendancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateCoWorkingAttendancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('co_working_attendances', function (Blueprint $table) {
+        Schema::create('participant_attendances', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
+            $table->string('schoolorg');
             $table->string('contact_number');
+            $table->boolean('is_firsttime')->default(false)->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateCoWorkingAttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('co_working_attendances');
+        Schema::dropIfExists('participant_attendances');
     }
 }
