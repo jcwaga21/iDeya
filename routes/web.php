@@ -22,6 +22,8 @@ Route::group(['middleware' => 'guest'], function() {
 
     Route::group(['prefix'=> "account", "namespace" => "Account"], function (){
         Route::view('/{user}/change-password',"co-working.changepassword")->name('account.password.change');
+
+
     });
 });
 
@@ -31,9 +33,14 @@ Route::group(["prefix"=>'events'], function(){
 		Route::get('/{event}/register', "RegistrationPageController")->name('register');
 		Route::post('/{event}/participant',"AddParticipantController")->name('events.participant.add');
 		Route::get('/{event}/seedetails', "SeeDetails")->name('event.seedetails');
-		Route::get('/{participant}/welcome', "WelcomeController")->name('event.welcome');    
+		Route::get('/{participant}/welcome', "WelcomeController")->name('event.welcome');   
 	});
+    Route::group(['namespace' => '\Modules\Office\Http\Controllers\Participant'], function(){
+        Route::get('{event}/signin',"SigninController")->name('participant.signin');
+        });
 });
+
+
 
 // should be grouped with the events above
 Route::group(['middleware' => 'auth'], function(){
