@@ -87,15 +87,25 @@
         <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
             <h1 class="my-4 text-3xl md:text-5xl text-gray-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">{{$ongoingEvent->title}}</h1>
             <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">{{$ongoingEvent->description}}</p>
-            <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">{{$ongoingEvent->date}}</p>
+            <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle"><?php echo date('F j, Y', strtotime($event->date)); ?></p>
         
-            <p class="text-gray-800 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Interested?</p>
+           
+            <p class="text-gray-800 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Already Registered?</p>
+            <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
+                <!--<img src="App Store.svg" class="h-12 pr-4 bounce-top-icons">-->
+                <a href="{{route('participant.signin', compact('ongoingEvent'))}}">
+                    <button class="border-red-500 border p-2 px-4 rounded-full text-red-700 bg-transparent hover:bg-red-700 hover:text-white hover:border-gray-200 font-bold bounce-top-icons">Sign In</button>
+                </a>
+            </div>
+
+             <p class="text-gray-800 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Interested?</p>
             <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
                 <!--<img src="App Store.svg" class="h-12 pr-4 bounce-top-icons">-->
                 <a href="{{route('register', compact('ongoingEvent'))}}">
                     <button class="border-red-500 border p-2 px-4 rounded-full text-red-700 bg-transparent hover:bg-red-700 hover:text-white hover:border-gray-200 font-bold bounce-top-icons">Register Now</button>
                 </a>
             </div>
+
 
         </div>
         @endunless
