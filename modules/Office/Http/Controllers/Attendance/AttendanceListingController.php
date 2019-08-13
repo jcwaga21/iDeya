@@ -3,6 +3,9 @@
 namespace Modules\Office\Http\Controllers\Attendance;
 
 use Modules\Office\Entities\GuestAttendance;
+use Modules\Office\Entities\EmployeeAttendance;
+use Modules\Office\Entities\InternAttendance;
+use Modules\Office\Entities\CoworkingAttendance;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -13,8 +16,11 @@ class AttendanceListingController extends Controller
     {
        
         $guestAttendance = GuestAttendance::all();
+        $employeeAttendance = EmployeeAttendance::all();
+        $internAttendance = InternAttendance::all();
+        $coworkingAttendance = CoworkingAttendance::all();
      
 
-        return view('office::attendance.listing', compact('guestAttendance'));
+        return view('office::attendance.listing', compact('guestAttendance','employeeAttendance','internAttendance','coworkingAttendance'));
     }
 }
