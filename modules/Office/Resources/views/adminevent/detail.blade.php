@@ -10,8 +10,11 @@
 					<div class="text-center mb-4">
 						<span class="text-base font-semibold uppercase text-red-700">General Details</span>
 					</div>
-					<div>
-						<a href="{{route('adminevent.update')}}" class="btn btn-lg btn-success">Update</a>
+					<div class="mb-2 flex justify-between">
+						<span class="text-right text-sm rounded-full bg-blue-500 px-4 text-white">
+							<a href="{{route('adminevent.edit', compact('event'))}}" class="btn btn-lg btn-success">Update</a>
+						</span>
+						
 					</div>
 					<div class="mb-2 flex justify-between">
 						<span class="text-sm font-semibold">Type:</span>

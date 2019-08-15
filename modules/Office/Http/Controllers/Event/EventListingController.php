@@ -66,7 +66,7 @@ class EventListingController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('office::edit' compact('event'));
+        return view('office::adminevent.edit', compact('event'));
     }
 
     /**
@@ -77,7 +77,9 @@ class EventListingController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //return view()
+        $data = $request->except('_token');
+        $event->update($data);
+        return redirect()->route('adminevent.detail', compact('event'));
     }
 
     /**
