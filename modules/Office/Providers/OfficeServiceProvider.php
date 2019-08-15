@@ -41,7 +41,7 @@ class OfficeServiceProvider extends ServiceProvider
             ]);
             $event->menu->add([
                 'text' => 'Employee',
-                'url' => route('employee.index'),
+                'url' => route('employee.listing'),
             ]);
         });
     }

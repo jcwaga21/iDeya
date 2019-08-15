@@ -8,6 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Employee Listings</h4>
+                        <a href="{{route('employee.create')}}" class="btn btn-lg btn-success">Add Employee</a>
                     </div>
                     <div class="card-body">
                         <table class="table table table-bordered table-striped .table-responsive">

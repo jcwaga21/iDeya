@@ -64,9 +64,9 @@ class EventListingController extends Controller
      * @param int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
-        return view('office::edit');
+        return view('office::edit' compact('event'));
     }
 
     /**
@@ -75,9 +75,9 @@ class EventListingController extends Controller
      * @param int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
-        //
+        //return view()
     }
 
     /**
