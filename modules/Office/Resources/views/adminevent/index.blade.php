@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
 <div class="text-gray-900 bg-gray-200 container mx-auto mt-16">
     <div class="p-4 flex">
         <h1 class="text-3xl">
@@ -11,7 +12,7 @@
         </a>
     </div>
     <div class="px-3 py-4 justify-center">
-        <table class="w-full text-md bg-white shadow-md rounded mb-4">
+        <table class="w-full text-md bg-white shadow-md rounded mb-4" id="myTable">
             <tbody>
                 <tr class="border-b text-center">
                     <th class="text-left p-3 px-5"></th>
@@ -24,6 +25,7 @@
                     <th class="text-left p-3 px-5">Reg. Fee</th>
                     <th class="text-left p-3 px-5">No. of Day/s</th>
                     <th class="text-left p-3 px-5">Status</th>
+                    <th class="text-left p-3 px-5">Action</th>
                 </tr>
                 <?php  $i=1;?>
                 @foreach($events as $event)
@@ -38,10 +40,23 @@
                     <td class="p-3 px-5">{{$event->reg_fee}}</td>
                     <td class="p-3 px-5">{{$event->no_of_days}}</td>
                     <td class="p-3 px-5"><div class="bg-yellow-500  text-white text-sm px-2 py-1  rounded-full ml-2 text-center ">{{$event->status}}</div></td>
+                    <td class="p-3 px-5"><a href="#" class="hover:text-red-600 text-gray-600"><i class="fas fa-trash"></i></a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+            var table = $('#myTable').DataTable( {
+                    responsive: true
+                } )
+                .columns.adjust()
+                .responsive.recalc();
+        } );
+
+    </script>
 @endsection
