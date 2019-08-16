@@ -46,9 +46,6 @@
                 <a href="{{route('adminevent.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-red-600 font-medium mr-4"><i class="fas fa-calendar-week"></i>
                     Events
                 </a>
-                <a href="{{route('employee.listing')}}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-red-600 mr-4 font-medium"><i class="fas fa-users"></i>
-                    Employees
-                </a>
             </div>
             <div class="mr-4">
                 <form method="POST" action="{{route('office.logout')}}">

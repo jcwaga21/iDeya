@@ -9,7 +9,6 @@
         <a href="{{route('adminevent.create')}}" role="button" class="bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2  border rounded-full ml-2" id="create-event">
             Create Event
         </a>
-
     </div>
     <div class="px-3 py-4 justify-center">
         <table class="w-full text-md bg-white shadow-md rounded mb-4">

@@ -25,5 +25,6 @@ class EventDetailController extends Controller
         )->get();
 
         return view('office::adminevent.detail', compact('event', 'participants', 'budgets'));
+        
     }
 }
