@@ -11,10 +11,12 @@
 						<span class="text-base font-semibold uppercase text-red-700">General Details</span>
 					</div>
 					<div class="mb-2 flex justify-between">
-						<span class="text-right text-sm rounded-full bg-blue-500 px-4 text-white">
-							<a href="{{route('adminevent.edit', compact('event'))}}" class="btn btn-lg btn-success">Update</a>
+						<span class="text-right text-sm rounded-full bg-blue-500 px-4 text-white hover:bg-blue-600">
+							<a href="{{route('adminevent.edit', compact('event'))}}">Update</a>
 						</span>
-						
+						<span class="text-right text-sm rounded-full bg-red-500 px-4 text-white hover:bg-red-600">
+							<a href="#">Delete</a>
+						</span>
 					</div>
 					<div class="mb-2 flex justify-between">
 						<span class="text-sm font-semibold">Type:</span>
@@ -45,7 +47,6 @@
 						<span class="text-sm font-semibold">Status:</span>
 						<span class="text-right text-sm rounded-full bg-yellow-500 px-4 text-white">{{$event->status}}</span>
 					</div>
-
 				</div>
 			</div>
 
@@ -81,6 +82,11 @@
 							<span class="text-sm font-semibold">Total</span>
 							<span class="text-sm text-right"><span>&#8369;</span> {{$budgets->sum('total_amount')}}</span>
 						</div>
+					</div>
+					<div class="mb-2 flex justify-between">
+						<span class="text-right text-sm rounded-full bg-blue-500 px-4 text-white hover:bg-blue-600">
+							<a href="{{route('adminevent.edit', compact('event'))}}">Update</a>
+						</span>
 					</div>
 				</div>			
 			</div>
